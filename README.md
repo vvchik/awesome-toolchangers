@@ -793,4 +793,5 @@ Pull requests are welcome:
 
 ## License
 
-List content is under **GPL-3.0** license, similar to Awesome-Extruders (can be changed to CC-BY/CC0 before publication if needed).
+The text of this list is licensed under [CC BY 4.0](LICENSE). The linked projects keep their own licenses.
+
