@@ -10,12 +10,12 @@
 | Project page | [https://github.com/Makertech3D/ProForge-5](https://github.com/Makertech3D/ProForge-5) |
 | Author | Makertech 3D |
 | About | Quad-CoreXY tool-changer printers, sold as kits, with GPL-3.0 files. A servo turns a spring-loaded cam that locks the tool plate to a master plate on the carriage. The design draws on the E3D ToolChanger. ProForge 4 and 300 have full STEP models, ProForge 5 has only STLs. |
-| Coupling | — |
+| Coupling | kinematic, 3 balls |
 | Lock | cam, servo |
 | Extruder | on the tool |
 | Change time | [~7 s](https://www.youtube.com/watch?v=kZDpSXT7a8A) |
 | Tools | 5 |
-| Base printers | ProForge 4, 4.2, 300, and 5 (own printers) |
+| Printer | own printer |
 | Firmware | Klipper, own macros |
 | Latest version | CAD<br>[2026-10](https://github.com/Makertech3D/ProForge-5/commit/d349b1a4c0645e62c620552e2f37b31e9fdfbab9) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/Makertech3D/Proforge-4?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/Makertech3D/Proforge-4)<br>[⏯️⁠34.2K](https://www.youtube.com/watch?v=xs0uCbAai-U) |

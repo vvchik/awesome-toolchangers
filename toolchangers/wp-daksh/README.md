@@ -11,7 +11,7 @@
 | Author | Ankur Verma (3D Unplugged) |
 | About | Earlier fully printed DAKSH generation for a Voron Trident. A single servo turns a camshaft that locks the tool. Nozzle wiper on the dock and a 4x4 LED matrix on the toolhead. No update since 2023-03. |
 | Type | Tool changer |
-| Coupling | — |
+| Coupling | pins in printed holes |
 | Lock | cam, servo |
 | Change time | [~10 s](https://github.com/ankurv2k6/wp-daksh-toolchanger) |
 | Latest version | STL<br>[2023-03](https://github.com/ankurv2k6/wp-daksh-toolchanger/commit/a113e4f) |

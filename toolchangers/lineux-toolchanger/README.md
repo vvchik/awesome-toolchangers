@@ -9,13 +9,13 @@
 | Section | Tool changers |
 | Project page | [https://github.com/3dfiyMyLife/Lineux-Toolchanger](https://github.com/3dfiyMyLife/Lineux-Toolchanger) |
 | Author | 3dfiy My Life (formerly Bikin-Creative) |
-| About | Front-mounted changer with Dockslide, a dock that slides away so the stock build volume stays usable. Tool changes run on plain Klipper macros (BTC) without a plugin. The Sling variant fits an Ender-style bed slinger. |
+| About | Front-mounted changer with Dockslide, a dock that slides away so the stock build volume stays usable. Tool changes run on plain Klipper macros (BTC) without a plugin. The Sling variant fits the Enderwire, an Ender 3 rebuilt as a Switchwire-style bed slinger. |
 | Coupling | pins and bushings |
 | Lock | magnets |
 | Extruder | on the tool |
 | Change time | — |
 | Tools | 5 |
-| Base printers | VzBot 330, Voron 2.4, Ender 3 (Sling) |
+| Printer | CoreXY, any gantry<br>Enderwire bed slinger |
 | Firmware | Klipper macros |
 | Latest version | CAD<br>[2026-07](https://github.com/3dfiyMyLife/Lineux-Toolchanger/commit/033836a) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/3dfiyMyLife/Lineux-Toolchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/3dfiyMyLife/Lineux-Toolchanger)<br>[🧡⁠73](https://www.printables.com/model/1109204-lineux-tool-changer)<br>[⏯️⁠48K](https://www.youtube.com/watch?v=LZql-NJ3cAA) |
@@ -38,6 +38,7 @@
 
 ## Notes
 
+- Printers that the author names: VzBot 330, Voron 2.4, Enderwire (Sling). ([source](https://github.com/3dfiyMyLife/Lineux-Toolchanger))
 - Tiga is the latest supported toolhead, and the README names E3D Revo Voron and Trianglelab CHC as example hotends. ([source](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/CAD/Toolhead))
 
 ## Ports and variants

@@ -15,7 +15,7 @@
 | Extruder | on the tool |
 | Change time | [~4-5 s](https://github.com/zruncho3d/madmax/blob/main/DESIGN.md) |
 | Tools | 2 |
-| Base printers | Voron Trident, Voron 0, Micron, Salad Fork, any CoreXY with a front MGN9 or MGN12 rail |
+| Printer | CoreXY, any gantry, front MGN9 or MGN12 X rail |
 | Firmware | Klipper, klipper-toolchanger |
 | Latest version | CAD<br>[2025-03](https://github.com/zruncho3d/madmax/commit/b375a90) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/zruncho3d/madmax?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/zruncho3d/madmax)<br>[⏯️⁠9.1K](https://www.youtube.com/watch?v=5X3DfevA83A) |
@@ -36,6 +36,7 @@
 ## Notes
 
 - The magnetic Maxwell coupling can also work as the nozzle probe, in place of Tap or Boop. ([source](https://github.com/zruncho3d/madmax))
+- Printers that the author names: Voron Trident, Voron 0, Micron, Salad Fork, any CoreXY with a front MGN9 or MGN12 rail. ([source](https://github.com/zruncho3d/madmax))
 - Used as a nozzle probe, the coupling gave a range of 0.002 mm and a standard deviation of 0.0005 mm in the author's sample probe run. ([source](https://github.com/zruncho3d/madmax))
 - The author estimates the conversion at about $100, and the conversion is fully reversible. ([source](https://github.com/zruncho3d/madmax))
 - Tool offset calibration is automatic with the Nudge probe. ([source](https://github.com/zruncho3d/madmax))

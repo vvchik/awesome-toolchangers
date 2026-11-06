@@ -15,7 +15,7 @@
 | Extruder | gears on the tool, motor on the carriage |
 | Change time | — |
 | Tools | 5 |
-| Base printers | Blackbox CE (own printer) |
+| Printer | own printer |
 | Firmware | RepRapFirmware |
 | Latest version | V1.1 R1<br>[2025-02](https://github.com/Kbreezy24/blackbox/releases/tag/V1.1_R1) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/Kbreezy24/blackbox?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/Kbreezy24/blackbox)<br>[⏯️⁠9.5K](https://www.youtube.com/watch?v=8-DRsm7HQsg) |

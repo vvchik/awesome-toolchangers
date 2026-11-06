@@ -14,8 +14,8 @@
 | Lock | magnets |
 | Extruder | on the tool |
 | Change time | — |
-| Tools | — |
-| Base printers | Voron 2.4 |
+| Tools | 6 |
+| Printer | CoreXY, any gantry |
 | Firmware | Klipper, klipper-toolchanger |
 | Latest version | 2.0<br>[2025-06](https://github.com/viesturz/ClickChanger/commit/2d7431fe501753efbc479ef5f6368b5cc72cc0d2) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/viesturz/ClickChanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/viesturz/ClickChanger)<br>[⏯️⁠21.9K](https://www.youtube.com/watch?v=bxkY-NfGOMM) |
@@ -33,5 +33,6 @@
 ## Notes
 
 - Tool 0 probes the bed with a hotend nozzle probe (Revo PZ) or with a Beacon or Cartographer, so the dock motion does not need to be smooth. ([source](https://github.com/viesturz/ClickChanger))
+- Printers that the author names: Voron 2.4. ([source](https://github.com/viesturz/ClickChanger))
 - Version 2.0 requires a CPAP fan, about 1 m of 15 mm tube, and a 2 g micro servo that drives the air valve. ([source](https://github.com/viesturz/ClickChanger/blob/main/README-pins.md))
 - Supported hotends are Revo Voron, Dragon or Dragon High Flow, and Rapido HF (not UHF), and a Revo PZ on T0 can act as the bed probe. ([source](https://github.com/viesturz/ClickChanger/blob/main/README-pins.md))

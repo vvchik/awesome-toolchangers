@@ -10,12 +10,12 @@
 | Project page | [https://github.com/ankurv2k6/daksh-toolchanger-v2](https://github.com/ankurv2k6/daksh-toolchanger-v2) |
 | Author | Ankur Verma (3D Unplugged) |
 | About | Fully printed servo-less latch inspired by the Prusa XL. The carriage locks and unlocks a tool with an X move at the dock. Front-dock and rear-dock tool variants. |
-| Coupling | — |
+| Coupling | Maxwell |
 | Lock | spring latch, the dock opens it |
 | Extruder | on the tool |
 | Change time | [<2.5-4 s](https://github.com/ankurv2k6/daksh-toolchanger-v2) |
 | Tools | 5 |
-| Base printers | Voron Trident, Voron 2.4, Voron 1.8, RatRig V-Core 3 |
+| Printer | CoreXY, any gantry |
 | Firmware | Klipper |
 | Latest version | CAD<br>[2024-06](https://github.com/ankurv2k6/daksh-toolchanger-v2/commit/6f9bed3) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/ankurv2k6/daksh-toolchanger-v2?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/ankurv2k6/daksh-toolchanger-v2)<br>[⏯️⁠13.2K](https://www.youtube.com/watch?v=v6QG2y4h36s) |
@@ -32,6 +32,7 @@
 
 ## Notes
 
+- Printers that the author names: Voron Trident, Voron 2.4, Voron 1.8, RatRig V-Core 3. ([source](https://github.com/ankurv2k6/daksh-toolchanger-v2))
 - A tool change takes under 4 seconds. ([source](https://github.com/ankurv2k6/daksh-toolchanger-v2))
 - The author's 5-color test print ran about 2000 tool changes with no tool or filament jam failures. ([source](https://www.youtube.com/watch?v=5WeLoIn3UTw))
 - It detects and recovers from error states, has built-in nozzle ooze blockers, and has a status LED on each toolhead. ([source](https://github.com/ankurv2k6/daksh-toolchanger-v2))

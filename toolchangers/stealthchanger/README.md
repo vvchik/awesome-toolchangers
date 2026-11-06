@@ -14,8 +14,8 @@
 | Lock | magnets |
 | Extruder | on the tool |
 | Change time | [~5-12 s](https://github.com/Rich-Nelson/voron-stealthchanger-cmyk/tree/main/toolchange-tuning) |
-| Tools | — |
-| Base printers | Voron 2.4, other flying-gantry printers |
+| Tools | 6 |
+| Printer | CoreXY, flying gantry, front MGN9 or MGN12 X rail |
 | Firmware | Klipper, klipper-toolchanger-easy |
 | Latest version | V1.1<br>[2024-06](https://github.com/DraftShift/StealthChanger/commit/785a7b19f94e84e928ec93a0ecc2198cabb71e5b) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/DraftShift/StealthChanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/DraftShift/StealthChanger)<br>[🧡⁠223](https://www.printables.com/model/837771-stealthchanger-tool-changer)<br>[⏯️⁠68.2K](https://www.youtube.com/shorts/ftX2LirTnoE) |
@@ -38,6 +38,7 @@
 
 - It works with many toolheads, for example StealthBurner, Dragon Burner, A4T, and XOL. ([source](https://stealthchanger.com/hardware/toolheads/))
 - The shuttle also works like Voron Tap: with the OptoTap sensor, the nozzle probes the bed. ([source](https://stealthchanger.com/hardware/stealthchanger/))
+- Printers that the author names: Voron 2.4, other flying-gantry printers. ([source](https://github.com/DraftShift/StealthChanger))
 - With standard 60 mm docks a 300 mm Voron fits up to 5 tools and a 350 mm Voron up to 6, and wide 76 mm docks fit one tool fewer. ([source](https://stealthchanger.com/hardware/toolheads/))
 - Each tool needs its own toolhead board over CAN bus or USB, for example the BigTreeTech EBB36 (CAN) or the LDO Nitehawk-36 (USB). ([source](https://stealthchanger.com/electronics/th_boards/))
 - LDO sells StealthChanger kits, and the base kit includes a CNC shuttle. ([source](https://github.com/DraftShift/StealthChanger/wiki/Vendors-and-Kits))

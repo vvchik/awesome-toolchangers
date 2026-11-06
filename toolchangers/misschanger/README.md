@@ -15,7 +15,7 @@
 | Extruder | on the tool |
 | Change time | — |
 | Tools | 4 |
-| Base printers | Voron 2.4, Voron Trident |
+| Printer | CoreXY, flying gantry (v1)<br>only Voron Trident (v2) |
 | Firmware | Klipper, klipper-toolchanger fork |
 | Latest version | MCv2<br>[2026-07](https://www.printables.com/model/1533585-misschanger-v2) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/VIN-y/MissChanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/VIN-y/MissChanger)<br>[🧡⁠20](https://www.printables.com/model/1533585-misschanger-v2) |
@@ -33,5 +33,6 @@
 ## Notes
 
 - Probing is separate from the tool change: the MGN9H rail of Voron Tap does the probing. ([source](https://github.com/VIN-y/MissChanger))
+- Printers that the author names: Voron 2.4, Voron Trident. ([source](https://github.com/VIN-y/MissChanger))
 - Each dock is 80 mm wide. ([source](https://github.com/VIN-y/MissChanger))
 - MissChanger uses its own fork of klipper-toolchanger, and its config files do not work with upstream TapChanger or StealthChanger setups. ([source](https://github.com/VIN-y/MissChanger))

@@ -25,3 +25,7 @@
 <tr><td align="center" width="33%"><a href="3-sparkshift.jpg"><img src="3-sparkshift.jpg" width="260" alt="SparkShift picture 3"></a><br><sub>Photo: <a href="https://github.com/nisparks/SparkShift">nisparks</a></sub></td><td align="center" width="33%"><a href="4-sparkshift.jpg"><img src="4-sparkshift.jpg" width="260" alt="SparkShift picture 4"></a><br><sub>Photo: <a href="https://github.com/nisparks/SparkShift">nisparks</a></sub></td><td align="center" width="33%"><a href="5-sparkshift.jpg"><img src="5-sparkshift.jpg" width="260" alt="SparkShift picture 5"></a><br><sub>Photo: <a href="https://github.com/nisparks/SparkShift">nisparks</a></sub></td></tr>
 <tr><td align="center" width="33%"><a href="6-sparkshift.jpg"><img src="6-sparkshift.jpg" width="260" alt="SparkShift picture 6"></a><br><sub>Photo: <a href="https://github.com/nisparks/SparkShift">nisparks</a></sub></td></tr>
 </table>
+
+## Notes
+
+- Printers that the author names: Voron 2.4. ([source](https://github.com/nisparks/SparkShift))

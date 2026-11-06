@@ -12,8 +12,8 @@
 | About | High-density hotend changer that fits up to 15 tools on a 350 mm Voron 2.4, with common and cheap parts. Only the Tool Carriage Holder needs changes for other CoreXY printers. The author plans to open the files and now runs a closed beta. |
 | Type | Hotend changer |
 | Status | Closed beta, files not public |
-| Coupling | — |
-| Lock | — |
+| Coupling | Maxwell |
+| Lock | magnets |
 | Latest version | First video<br>[2026-01](https://www.youtube.com/watch?v=Pdesunm21xI) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/srinn/quindec-toolchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/srinn/quindec-toolchanger)<br>[⏯️⁠8K](https://www.youtube.com/watch?v=941lrKT-fIY) |
 | Links | [BOM](https://docs.google.com/spreadsheets/d/1nJBv6CMfGyc1glqEgBD53pvTv2HscVy6cldr4ujhJa0/edit?usp=sharing)<br>[Video](https://www.youtube.com/watch?v=-aM5X-14fe0)<br>[Video](https://www.youtube.com/watch?v=941lrKT-fIY) |

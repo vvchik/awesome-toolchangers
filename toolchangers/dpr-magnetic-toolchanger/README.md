@@ -16,7 +16,7 @@
 | Change time | [~5-6 s](https://www.youtube.com/watch?v=bWBItIszMek) |
 | Latest version | First release<br>[2020-02](https://www.instructables.com/Magnetic-3D-Printed-Toolchnager/) |
 | Stars Likes Views | [⏯️⁠5.9K](https://www.youtube.com/watch?v=bWBItIszMek) |
-| Links | [CAD (Fusion 360)](https://myhub.autodesk360.com/ue2b81178/shares/public/SH919a0QTf3c32634dcf1717c6207e6b3559)<br>[Manual](https://www.instructables.com/Magnetic-3D-Printed-Toolchnager/)<br>[Video](https://www.youtube.com/watch?v=bWBItIszMek) |
+| Links | [Manual](https://www.instructables.com/Magnetic-3D-Printed-Toolchnager/)<br>[Video](https://www.youtube.com/watch?v=bWBItIszMek) |
 | Groups | — |
 
 ## Pictures (12)

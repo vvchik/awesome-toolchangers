@@ -15,7 +15,7 @@
 | Extruder | on the tool |
 | Change time | [~9-11 s](https://github.com/user-attachments/assets/cc918851-83fa-48d1-bb6e-ddeb8659f7ee) |
 | Tools | 2 |
-| Base printers | HyperCube Evolution |
+| Printer | only HyperCube Evolution |
 | Firmware | Klipper |
 | Latest version | v1.0<br>[2025-06](https://github.com/evanqhuang/maxwells-razor/releases/tag/v1.0) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/evanqhuang/maxwells-razor?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/evanqhuang/maxwells-razor) |
@@ -30,3 +30,7 @@
 <tr><td align="center" width="33%"><a href="6-maxwells-razor.jpg"><img src="6-maxwells-razor.jpg" width="260" alt="Maxwell&#x27;s Razor picture 6"></a><br><sub>Photo: <a href="https://www.printables.com/model/1381988-maxwells-razor-v1-90-printed-toolchanger">Evan Huang</a></sub></td><td align="center" width="33%"><a href="7-maxwells-razor.jpg"><img src="7-maxwells-razor.jpg" width="260" alt="Maxwell&#x27;s Razor picture 7"></a><br><sub>Photo: <a href="https://www.printables.com/model/1381988-maxwells-razor-v1-90-printed-toolchanger">Evan Huang</a></sub></td><td align="center" width="33%"><a href="8-maxwells-razor.jpg"><img src="8-maxwells-razor.jpg" width="260" alt="Maxwell&#x27;s Razor picture 8"></a><br><sub>Photo: <a href="https://www.printables.com/model/1381988-maxwells-razor-v1-90-printed-toolchanger">Evan Huang</a></sub></td></tr>
 <tr><td align="center" width="33%"><a href="9-maxwells-razor.jpg"><img src="9-maxwells-razor.jpg" width="260" alt="Maxwell&#x27;s Razor picture 9"></a><br><sub>Photo: <a href="https://www.printables.com/model/1381988-maxwells-razor-v1-90-printed-toolchanger">Evan Huang</a></sub></td></tr>
 </table>
+
+## Notes
+
+- Printers that the author names: HyperCube Evolution. ([source](https://github.com/evanqhuang/maxwells-razor))
