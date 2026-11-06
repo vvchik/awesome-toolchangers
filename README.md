@@ -1,797 +1,140 @@
 # Awesome-Toolchangers
 
-A curated list of **open-source toolchanger systems** and **hotend module interfaces** for FDM/FFF 3D printers.
-
-> Focus: automatic or semi-automatic **tool / hotend switching** with real docking & locking mechanisms.  
-> No “just unscrew the hotend by hand” mounts.
-
-Inspired by [Awesome-Extruders](https://github.com/SartorialGrunt0/Awesome-Extruders) and [Awesome-Toolheads](https://github.com/SartorialGrunt0/Awesome-Toolheads).
-
----
-
-## Table of Contents
-
-- [Awesome-Toolchangers](#awesome-toolchangers)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Part 1: Mature and Widely Used Solutions](#part-1-mature-and-widely-used-solutions)
-    - [1.1 E3D ToolChanger / Motion System](#11-e3d-toolchanger--motion-system)
-    - [1.2 Jubilee — Reference Open-Source Toolchanger](#12-jubilee--reference-open-source-toolchanger)
-    - [1.3 StealthChanger — Leader of the Voron Ecosystem](#13-stealthchanger--leader-of-the-voron-ecosystem)
-    - [1.4 TapChanger — Fundamental Voron Toolchanger](#14-tapchanger--fundamental-voron-toolchanger)
-    - [1.5 MadMax — Maxwell Coupling for Static Gantry](#15-madmax--maxwell-coupling-for-static-gantry)
-    - [1.6 Blackbox CE — Water-Cooled Kinematic System](#16-blackbox-ce--water-cooled-kinematic-system)
-  - [Part 2: New, Experimental, and Alpha/Beta Projects](#part-2-new-experimental-and-alphabeta-projects)
-    - [2.1 DAKSH V2 — Prusa XL-Style Without Servo (HIGH PRIORITY)](#21-daksh-v2--prusa-xl-style-without-servo-high-priority)
-    - [2.2 FoxChanger — Prusa XL Latch Without Custom Metal](#22-foxchanger--prusa-xl-latch-without-custom-metal)
-    - [2.3 ClickChanger — CPAP Cooling in Shuttle](#23-clickchanger--cpap-cooling-in-shuttle)
-    - [2.4 MissChanger — Toolless Conversion](#24-misschanger--toolless-conversion)
-    - [2.5 Rotating Magnet Toolchanger — Ultra-Low Cost](#25-rotating-magnet-toolchanger--ultra-low-cost)
-    - [2.6 Lineux Toolchanger — Pure Klipper Macros](#26-lineux-toolchanger--pure-klipper-macros)
-    - [2.7 Doot Changer — $20 BOM](#27-doot-changer--20-bom)
-    - [2.8 Proforge 4 — Quad-Core-XY](#28-proforge-4--quad-core-xy)
-    - [2.9 3D Printed Magnetic Toolchanger (D\_P\_R)](#29-3d-printed-magnetic-toolchanger-d_p_r)
-  - [Part 3: Hotend Module / Hotend Pod Interfaces](#part-3-hotend-module--hotend-pod-interfaces)
-    - [3.1 Maxwell Kinematic Coupling](#31-maxwell-kinematic-coupling)
-    - [3.2 Kelvin Kinematic Coupling](#32-kelvin-kinematic-coupling)
-    - [3.3 Bushing/Pin Interface (StealthChanger style)](#33-bushingpin-interface-stealthchanger-style)
-    - [3.4 Pogo Pin Interface](#34-pogo-pin-interface)
-    - [3.5 CAN Bus Toolhead Interface (Modern Standard)](#35-can-bus-toolhead-interface-modern-standard)
-    - [3.6 Prusa XL-Style Mechanical Latch](#36-prusa-xl-style-mechanical-latch)
-  - [Part 4: Comparative Analysis](#part-4-comparative-analysis)
-    - [4.1 Locking Mechanics](#41-locking-mechanics)
-    - [4.2 Tool Mass and Impact on Speed](#42-tool-mass-and-impact-on-speed)
-    - [4.3 Scaling (Number of Tools)](#43-scaling-number-of-tools)
-    - [4.4 Firmware Requirements](#44-firmware-requirements)
-  - [Part 5: Selection Recommendations](#part-5-selection-recommendations)
-    - [Quick-Release Latch WITHOUT Spring-Loaded Nuts (High Priority)](#quick-release-latch-without-spring-loaded-nuts-high-priority)
-    - [Maximum Precision / Research Cases](#maximum-precision--research-cases)
-    - [Minimum Cost / Experimental Level](#minimum-cost--experimental-level)
-    - [Maximum Number of Tools](#maximum-number-of-tools)
-  - [Part 6: Sources and Useful Links](#part-6-sources-and-useful-links)
-  - [Contributing](#contributing)
-  - [License](#license)
-
----
-
-## Introduction
-
-**Automatic tool changing without servos** opens new possibilities for multi-material printing on CoreXY printers. Over the past few years, the open-source toolchanger ecosystem has significantly expanded — from academic reference designs to production-ready kits with CNC-machined components.
-
-Key trend: transition from **servo-driven cam lock** to **kinematic coupling** with magnetic retention or fully mechanical latches like the Prusa XL, as well as active use of **CAN bus** instead of pogo contacts.
-
-Below is a catalog of systems divided into:
-
-1. Mature and widely used solutions.
-2. New, lesser-known, experimental (alpha/beta) projects.
-3. Meta-level: hotend module / hotend pod interfaces and docking standards.
-
----
-
-## Part 1: Mature and Widely Used Solutions
-
-### 1.1 E3D ToolChanger / Motion System
-
-**Status**: Stable / Legacy reference design
-**License**: Open-source hardware (E3D)
-**GitHub / Docs**:
-- https://github.com/e3donline/Motion-System  
-- Documentation and assembly: https://e3d-online.com  
-
-**Locking Mechanics**:
-- **Type**: Maxwell kinematic coupling + servo-driven cam lock.
-- **Coupling**: 3 balls on tool + 3 conical sockets on carriage (6 contact points).
-- **Locking**: Bayonet cam lock with spring, driven by micro-servo.
-- **Parking docks**: Magnetic dock stations for tool storage.
-
-**Supported Tools**:
-- Up to 4 tools: extruders, laser, light mill, grippers, etc.
-- Used as reference for multi-material and multi-process printing.
-
-**Hotend Compatibility**:
-- E3D V6, Volcano, Hemera, Chimera, Revo (via tool plates).
-- Any hotends that can be mounted on E3D tool plate.
-
-**Interface**:
-- Tool boards Duet (CAN-like bus) or classic wiring.
-- Uses macros in RepRapFirmware for T0/T1/... with docking.
-
-**Features**:
-- Essentially the **originator of the E3D-compatible tool plates standard**.
-- Inspired Jubilee and many open-source replicas.
-- Requires CNC parts (V-grooves, cam-lock), but provides reference-level repeatability.
-
----
-
-### 1.2 Jubilee — Reference Open-Source Toolchanger
-
-**Status**: Stable (reference design)
-**License**: CC BY 4.0 (OSHWA Certified)
-**GitHub**: https://github.com/machineagency/jubilee
-**Developer**: Joshua Vasquez, Machine Agency, University of Washington
-
-**Locking Mechanics**:
-- **Type**: Maxwell kinematic coupling + Remote Elastic Lock (twist lock).
-- **Coupling**: 3 steel balls + 3 V-shaped grooves = 6 contact points.
-- **Locking**: Wedge plate (cast Delrin) + cable twist lock with spring.
-- **Repeatability**: ~**5 µm** (documented).
-- **Lifespan**: tens of thousands of cycles before wedge plate replacement.
-
-**Supported Tools**:
-- 3D extruders (direct / Bowden).
-- Pen plotter, syringe extrusion, laser modules.
-- Up to **4–5 tools** (409 mm horizontal rail).
-
-**Hotend Compatibility**:
-- E3D V6 (native), Dragon, Revo Six, Mosquito, etc.
-- Hemera (community mods).
-- Any E3D-compatible tool plates.
-
-**Interface**:
-- Individual wiring for each tool (pogo-pins not standardized).
-- Duet/RepRapFirmware controllers (native), Klipper via JubileeKlipper.
-- Kinematically coupled bed plate with auto-tramming.
-
-**Tool Mass**: ~200 g (typical direct extruder).
-**Features**:
-- **No spring-loaded nuts** — heat-set inserts.
-- Academic-level documentation and examples.
-- Used in scientific installations (liquid handling, circuit printing).
-- CAD: STEP, STL, SolidWorks assemblies.
-
----
-
-### 1.3 StealthChanger — Leader of the Voron Ecosystem
-
-**Status**: Stable V1.1
-**License**: GPL-3.0
-**GitHub**: https://github.com/DraftShift/StealthChanger
-**Developer**: DraftShift Design
-**Stars**: ~970+
-
-**Locking Mechanics**:
-- **Type**: Bushings + pins + magnets (kinematic/friction fit).
-- **Locking**: Vertical engagement, fixed by pins and bushings, magnets provide additional retention.
-- **NO servo, NO wires on shuttle.**
-- **Repeatability**: no worse than TapChanger (confirmed by input-shaper tests).
-
-**Supported Printers**:
-- Voron 2.4 (primary target).
-- Trident (via liftbar mods).
-
-**Toolhead Compatibility**:
-- StealthBurner, Dragon Burner, Rapid Burner.
-- Yavoth, AntHead, A4T, XOL.
-- Mini StealthBurner (usermod).
-
-**Number of Tools**:
-- 300 mm: up to **5 tools**.
-- 350 mm: up to **6 tools**.
-
-**Interface**:
-- **CAN bus** strongly recommended (EBB36, Nitehawk-36, etc.).
-- OptoTap (or Revo PZ) as Z-probe sensor on each tool.
-- Backplate pins: 4×12 mm and 4×13 mm.
-
-**Tool Mass**: less than TapChanger (optimized design).
-**Firmware**: Klipper + DraftShift fork of `klipper-toolchanger`.
-
-**Features**:
-- **No spring-loaded nuts** — bushings on hardened pins.
-- All wear parts replaceable without reprinting the entire system.
-- LDO Motors produces commercial kits with CNC shuttles.
-- Requires ~200 mm tophat for stable operation in enclosed chamber.
-
----
-
-### 1.4 TapChanger — Fundamental Voron Toolchanger
-
-**Status**: Stable V4.3
-**License**: GPL-3.0
-**GitHub**: https://github.com/viesturz/tapchanger
-**Developer**: Viesturz (Latvia)
-
-**Locking Mechanics**:
-- **Type**: Oversized linear rail concept (~4 mm travel).
-- **Coupling**: Bearings "rolling" on steel pins/plates (kinematic self-alignment).
-- **Variants**: Plates, Rods, Square Rods.
-- **NO servo** — uses printer movement (XY+Z).
-
-**Supported Printers**:
-- Voron 2.4 (reference).
-
-**Toolhead Compatibility**:
-- Dragon Burner (primary) — up to **6 heads on 350 mm frame**.
-- StealthBurner, MiniStealthBurner.
-- Rapid Burner, Xol-Toolhead (experimental).
-
-**Interface**:
-- OptoTap sensor for nozzle Z-probing.
-- CAN bus recommended (EBB36/42, SB2040, etc.).
-- Liftbar dock variant (V4.0+) for static-gantry printers.
-
-**Tool Mass**: HGX gears toolhead ~17 g lighter than stock.
-**Firmware**: Klipper + `viesturz/klipper-toolchanger`.
-
-**Features**:
-- **No spring-loaded nuts** — heat-set inserts + standard M3 screws.
-- Spring-steel nozzle pads (V2.3+) — don't warp from temperature.
-- Reference design on which StealthChanger was built.
-
----
-
-### 1.5 MadMax — Maxwell Coupling for Static Gantry
-
-**Status**: Active Beta (12+ completed builds)
-**License**: GPL-3.0
-**GitHub**: https://github.com/zruncho3d/madmax
-**Developer**: Zruncho3d
-
-**Locking Mechanics**:
-- **Type**: Magnetic Maxwell kinematic coupling (pins and screws).
-- **Coupling**: 6 contact points (Maxwell geometry).
-- **Locking**: **Magnets only** — no positive-lock mechanism.
-- **Detection**: Firmware-based safety (coordinate convergence monitoring and contact sensors).
-
-**Key Innovation**:
-> Coupling mechanism **is** the probe — used for Z-probing instead of Tap/Boop.
-
-- Accuracy: range ~**0.002 mm**, std dev ~**0.0005 mm** (per author's test results).
-
-**Supported Printers**:
-- Voron Trident (native static gantry support).
-- Voron Zero, Micron, Salad Fork.
-- Tri-Zero, Pandora's Box.
-- Ender3→Trident conversions.
-
-**Toolhead Compatibility**:
-- DragonBrick, RapidBrick.
-- AntHead, A4T, A4TBrick, OmniBrick.
-- XOL, MiniSB, OmniBurner.
-
-**Interface**:
-- Front-mounted MGN9H/MGN12H linear rail.
-- Keyslot docks + magnets.
-- SpeedClips for quick belt attachment.
-
-**Number of Tools**:
-- 2 (tested/proven), theoretically more (limited by frame width).
-
-**Firmware**:
-- Klipper with `klipper-toolchanger`, KTC2, or Bikin configs.
-
-**Features**:
-- **No liftbar** for static-gantry printers.
-- XY-only toolchanges — very fast.
-- **No spring-loaded nuts** — magnets + pins + screws.
-- Automatic offset calibration (Nudge).
-- Conversion cost: ~**$100**, fully reversible.
-
----
-
-### 1.6 Blackbox CE — Water-Cooled Kinematic System
-
-**Status**: Stable (Community Edition)
-**License**: CERN-OHL-W
-**GitHub**: https://github.com/Kbreezy24/blackbox
-**Support**: KB3D, LDO Motors
-
-**Locking Mechanics**:
-- **Type**: Jubilee-style kinematic coupling + wedge lock.
-- **Cooling**: Passive water cooling for all tools (shared water manifold).
-- **Sharing**: Single motor, shared among tools (optional configurations in original Blackbox multi-tool concept).
-
-**Features**:
-- Build volume: 300×300×275 mm.
-- Up to **5 tools**.
-- X-axis mounted extruder motor (weight/cost savings).
-- TAMV automatic tool alignment.
-- Silicone nozzle wiping/sealing.
-- Repeatability: ~22 µm.
-
-**Firmware**:
-- Duet 3 (RRF), Klipper configuration possible.
-
----
-
-## Part 2: New, Experimental, and Alpha/Beta Projects
-
-### 2.1 DAKSH V2 — Prusa XL-Style Without Servo (HIGH PRIORITY)
-
-**Status**: Open Beta
-**License**: CC0-1.0 (Public Domain)
-**GitHub**: https://github.com/ankurv2k6/daksh-toolchanger-v2
-**Developer**: Ankur Verma (3D Unplugged)
-
-**Locking Mechanics**:
-- **Type**: Prusa XL-inspired mechanical latch — fully servo-less.
-- **Material**: Fully 3D-printed, with metal inserts in critical zones.
-- **Locking**: Sliding latch with friction-engagement + PTFE pins.
-- **No spring-loaded nuts** — lock/unlock via XY carriage movement.
-
-**Performance**:
-- Tool change time: **< 4 seconds**.
-- Tested: **2000+ cycles** without degradation.
-
-**Compatibility**:
-- Voron Trident, 1.8, 2.4.
-- RatRig VCore 3 and other CoreXY.
-
-**Features**:
-- Intelligent Error State Detection and Recovery.
-- Automatic XYZ calibration across tools.
-- Integrated nozzle ooze blockers.
-- Status LED on each toolhead (4×4 matrix).
-- Wire looms inside frame.
-- Recommended latch material — PETG-CF.
-
-**CAD/STL**:
-- Complete STL package + CAD (Fusion 360/STEP via community).
-
----
-
-### 2.2 FoxChanger — Prusa XL Latch Without Custom Metal
-
-**Status**: Beta/Alpha
-**GitHub**: https://github.com/Noisyfox/FoxChanger
-**Developer**: Noisyfox
-
-**Locking Mechanics**:
-- **Type**: Prusa XL-style twist-lock latch.
-- **100% off-the-shelf parts** — no custom metalwork.
-- **Latch print**: PETG-CF, 100% infill.
-
-**Compatibility**:
-- Voron 2.4, Trident.
-- Toolhead: Dragon Burner (primary target).
-
-**Probing**:
-- BambuLab-style **heatbed piezo sensor** (toolhead space given to latch mechanics, Z-sensor on bed).
-
-**Features**:
-- Inspired by Prusa XL latch analysis (3DUnplugged) and DAKSH V2.
-- Works with modified Sherpa Zero ECAS.
-- CAN boards from KayosMaker.
-
----
-
-### 2.3 ClickChanger — CPAP Cooling in Shuttle
-
-**Status**: Beta V2.0
-**License**: BSD-3-Clause
-**GitHub**: https://github.com/viesturz/ClickChanger
-**Developer**: Viesturz
-
-**Locking Mechanics**:
-- **Type**: Vertical attach/detach + Revo PZ hotend probe.
-- **Coupling**: Rigid connection of Y-rail to heatsink.
-- **Pogo-pins**: For connecting shared CPAP fan.
-
-**CPAP System (required V2.0)**:
-- CPAP fan (mount for WS7040).
-- ~1 m tubing, Ø ~15 mm.
-- 2-gram micro-servo for CPAP valve.
-
-**Hotend Compatibility**:
-- Revo Voron (primary, with Revo PZ).
-- Dragon / Dragon HF.
-- Rapido HF (not UHF).
+A curated catalog of open-source toolchangers and hotend changers for FDM 3D printers. Every design has one row with its coupling, lock, change time, latest revision, links, and builder groups. Designs of the same type sit side by side.
 
-**Extruder Compatibility**:
-- HGX Large Gears (lightest).
-- Orbiter V2, Sherpa mini.
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Last update](https://img.shields.io/github/last-commit/vvchik/awesome-toolchangers?label=last%20update)](https://github.com/vvchik/awesome-toolchangers/commits/main) [![License CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)](LICENSE) [![Contribute](https://img.shields.io/badge/add%20a%20toolchanger-issue%20form-2da44e)](https://github.com/vvchik/awesome-toolchangers/issues/new?template=add-toolchanger.yml)
 
-**BOM shuttle** (key):
-- 3×6×2.5 mm bearing.
-- 2g micro-servo (+ M2×4 screws).
-- CPAP fan + tube.
-
-**BOM toolhead**:
-- 4×12 mm steel pins.
-- 2× 4×6×6 mm bushings.
-- Kailh micro-switch (3 mm).
-- 30×30×10 mm axial fan.
-- 2× 6×3 mm magnets.
+## Contents
 
----
+- [Start here](#start-here)
+- [Tool changers](#tool-changers)
+- [Hotend changers](#hotend-changers)
+- [Concepts and prototypes](#concepts-and-prototypes)
+- [Legacy designs](#legacy-designs)
+- [Other designs](#other-designs)
+- [Column notes](#column-notes)
+- [How to contribute](#how-to-contribute)
+- [Similar projects](#similar-projects)
+- [License](#license)
 
-### 2.4 MissChanger — Toolless Conversion
+## Start here
 
-**Status**: Stable V1.1
-**GitHub**: https://github.com/VIN-y/MissChanger
-**Developer**: VIN-y
+Good designs to start with. Most people build one changer for their printer, so pick the one that fits your printer. Each has public CAD, build instructions, and Klipper configs. Most have an active builder group.
 
-**Locking Mechanics**:
-- **Type**: MGN9H-based tapping system (compatible with Voron TAP mechanics).
-- **Tap&Change**: for StealthBurner toolheads.
+### Start with a tool changer
 
-**Key Feature**:
-- **Toolless conversion** between modes:
-  - full toolchanger;
-  - single-nozzle mode with "regular" StealthBurner.
+- **[StealthChanger](#stealthchanger): the most common choice for Voron-style printers**  
+is very popular, and more people have built it than any other changer here. A shuttle with pins and bushings carries the toolhead. It works with many toolheads and has a full manual and wiki.
+- **[TapChanger](#tapchanger): the design that StealthChanger grew from**  
+has a kinematic shuttle with no servos and no wires: the tool rides on bearings and rods. A lift bar dock adds static-gantry printers such as the Voron Trident family. Its author also wrote klipper-toolchanger, the Klipper plugin that many of these designs use.
+- **[MadMax](#madmax): simple tool changer conversion**  
+is one of the first changers from the Voron community, and it is simple to build. The docks attach to the front corners of the gantry, at the idlers, not to a front beam. For this reason, it is common on the Voron 0 and other small printers that have no front beam at gantry level. It converts an existing CoreXY with a front MGN9 or MGN12 X rail.
+- **[Lineux Toolchanger](#lineux-toolchanger): tool changer with a stowable dock**  
+has a dock that slides away, so the stock build volume stays usable. Tool changes run on plain Klipper macros without a plugin. It fits VzBot and RatRig style carriages, Voron style carriages, and bed slingers with a 2020 extrusion frame, such as the Ender 3.
 
-**Compatibility**:
-- Voron 2.4, Trident (WIP).
-- Revo-Voron (recommended hotend).
+### Start with a hotend changer
 
-**Dimensions**:
-- Dock width: 80 mm.
-- Bar-ends: 28 mm.
-- Profile — fits 2020 extrusion slot.
+- **[CxChanger](#cxchanger): low-cost hotend changer with preheating docks**  
+moves only in XY to release a hotend and to open the shared extruder. The docks preheat the next hotend, plug parked nozzles with silicone, and cool them with fans.
+- **[MedusaHC](#medusahc): budget hotend changer**  
+keeps one extruder on the head and swaps only the hotends. As a hotend leaves, a servo opens the extruder lever. It started as an add-on for the Duender CoreXY and has its own Klipper module.
+- **[Lineux Hotswap](#lineux-hotswap): hotend changer without a servo**  
+keeps the extruder, the part fan, and the toolboard on the carriage. A pin on the dock opens the extruder idler as the hotend leaves.
 
-**Firmware**:
-- Fork `klipper-toolchanger` (NOT compatible with upstream TapChanger/StealthChanger configs).
+## Tool changers
 
----
+Each tool has its own extruder, on the tool or on the frame with a Bowden tube. The whole tool leaves the carriage.
 
-### 2.5 Rotating Magnet Toolchanger — Ultra-Low Cost
+| Photo | Tool changer and why it’s interesting | Coupling | Lock | Extruder | Change time | Tools | Base printers | Firmware | Latest version | Stars Likes Views | Links | Groups |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| <a href="toolchangers/stealthchanger/README.md"><img src="toolchangers/stealthchanger/0-stealthchanger.jpg" width="120" alt="StealthChanger"></a> | <a id="stealthchanger"></a>[**StealthChanger**](https://github.com/DraftShift/StealthChanger)<br>*DraftShift Design*<br>Shuttle on the X carriage with pins and bushings. Fork of TapChanger with fewer parts. V1.1 parts do not fit V1.0. | pins and bushings | magnets | on the tool | [~5-12 s](https://github.com/Rich-Nelson/voron-stealthchanger-cmyk/tree/main/toolchange-tuning) | — | Voron 2.4, other flying-gantry printers | Klipper, klipper-toolchanger-easy | V1.1<br>[2024-06](https://github.com/DraftShift/StealthChanger/commit/785a7b19f94e84e928ec93a0ecc2198cabb71e5b) | [![GitHub stars](https://img.shields.io/github/stars/DraftShift/StealthChanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/DraftShift/StealthChanger)<br>[🧡⁠223](https://www.printables.com/model/837771-stealthchanger-tool-changer)<br>[⏯️⁠68.2K](https://www.youtube.com/shorts/ftX2LirTnoE) | [CAD](https://github.com/DraftShift/StealthChanger/tree/main/CAD)<br>[STL](https://github.com/DraftShift/StealthChanger/tree/main/STLs)<br>[BOM](https://github.com/DraftShift/StealthChanger/wiki/Bill-of-Materials)<br>[Manual](https://github.com/DraftShift/StealthChanger/tree/main/Manual)<br>[Wiki](https://github.com/DraftShift/StealthChanger/wiki)<br>[Config](https://github.com/DraftShift/StealthChanger/tree/main/Klipper)<br>[Files](https://www.printables.com/model/837771-stealthchanger-tool-changer)<br>[Video](https://www.youtube.com/shorts/ftX2LirTnoE) | [Discord](https://discord.gg/draftshift) EN 4.4K<br>[Facebook](https://www.facebook.com/groups/449879874593718/) EN |
+| <a href="toolchangers/tapchanger/README.md"><img src="toolchangers/tapchanger/0-tapchanger.jpg" width="120" alt="TapChanger"></a> | <a id="tapchanger"></a>[**TapChanger**](https://github.com/viesturz/tapchanger)<br>*viesturz*<br>Kinematic shuttle: the tool rides on bearings and rods. No servos and no wires on the shuttle. An optional lift bar dock adds static-gantry printers. | bearings on rods | magnets | on the tool | [~5-7 s](https://www.youtube.com/watch?v=IVhQJohzZ84) | — | Voron 2.4, Voron Trident | Klipper, klipper-toolchanger | V4.3<br>[2024-06](https://github.com/viesturz/tapchanger/commit/da002c4bdac88759e0f119470014cb8955da5879) | [![GitHub stars](https://img.shields.io/github/stars/viesturz/tapchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/viesturz/tapchanger)<br>[⏯️⁠54.8K](https://www.youtube.com/watch?v=EnS93NUZhsY) | [STL](https://github.com/viesturz/tapchanger/tree/main/Tapchanger/STL)<br>[CAD](https://github.com/viesturz/tapchanger/tree/main/Tapchanger/CAD)<br>[BOM](https://github.com/viesturz/tapchanger/blob/main/Tapchanger/BOM.md)<br>[Manual](https://github.com/viesturz/tapchanger/blob/main/Tapchanger/Assembly.md)<br>[Config](https://github.com/viesturz/tapchanger/tree/main/Klipper)<br>[Video](https://www.youtube.com/playlist?list=PLqU7kX5nUJDRDw5z0NLwJ22OkV6fbjnSW) | [Discord](https://discord.gg/xmDWrYGwVJ) EN 2.2K |
+| <a href="toolchangers/jubilee/README.md"><img src="toolchangers/jubilee/0-jubilee.jpg" width="120" alt="Jubilee"></a> | <a id="jubilee"></a>[**Jubilee**](https://github.com/machineagency/jubilee)<br>*Machine Agency (Joshua Vasquez)*<br>Complete open multi-tool CoreXY platform (300×300×300 mm) for printing, plotting, and lab tools. A twist lock that senses torque pulls the tool plate onto a kinematic coupling. The tool plates fit E3D tools. | Maxwell and wedge plate | twist lock, motor | on the tool | — | 4 | Jubilee (own printer) | RepRapFirmware | V2.2.2<br>[2021-10](https://github.com/machineagency/jubilee/releases/tag/v2.2.2) | [![GitHub stars](https://img.shields.io/github/stars/machineagency/jubilee?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/machineagency/jubilee) | [STEP](https://github.com/machineagency/jubilee/tree/main/frame)<br>[Files](https://github.com/machineagency/jubilee/tree/main/tools)<br>[BOM](https://docs.google.com/spreadsheets/d/1pRzBQxVzL9c4T9b1RrKvSjlSwJJhJ7NcbSV6iJUv0X0/edit#gid=0)<br>[Manual](https://jubilee3d.com/index.php?title=Assembly_Instructions)<br>[Wiki](https://jubilee3d.com/index.php?title=Main_Page)<br>[Config](https://github.com/machineagency/jubilee/tree/main/software/duet_config_files) | [Discord](https://discord.gg/XkphRqb) EN 2K<br>[Reddit](https://www.reddit.com/r/Jubilee3D/) EN |
+| <a href="toolchangers/madmax/README.md"><img src="toolchangers/madmax/0-madmax.jpg" width="120" alt="MadMax"></a> | <a id="madmax"></a>[**MadMax**](https://github.com/zruncho3d/madmax)<br>*Zruncho*<br>Converts an existing CoreXY with a front MGN9 or MGN12 X rail, such as the Voron Trident and Voron 0 families. The docks attach to the front corners of the gantry, so the printer needs no front beam at gantry level. A magnetic Maxwell coupling of pins and screws holds the tool. | Maxwell | magnets | on the tool | [~4-5 s](https://github.com/zruncho3d/madmax/blob/main/DESIGN.md) | 2 | Voron Trident, Voron 0, Micron, Salad Fork, any CoreXY with a front MGN9 or MGN12 rail | Klipper, klipper-toolchanger | CAD<br>[2025-03](https://github.com/zruncho3d/madmax/commit/b375a90) | [![GitHub stars](https://img.shields.io/github/stars/zruncho3d/madmax?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/zruncho3d/madmax)<br>[⏯️⁠9.1K](https://www.youtube.com/watch?v=5X3DfevA83A) | [CAD](https://github.com/zruncho3d/madmax/tree/main/CAD)<br>[STL](https://github.com/zruncho3d/madmax/tree/main/STL)<br>[BOM](https://github.com/zruncho3d/madmax/blob/main/BOM.md)<br>[Manual](https://github.com/zruncho3d/madmax/blob/main/INSTRUCTIONS.md)<br>[Config](https://github.com/zruncho3d/madmax/blob/main/CONFIGURATION.md)<br>[Video](https://www.youtube.com/watch?v=5X3DfevA83A) | [Discord](https://discord.gg/doomcube) EN 6.9K |
+| <a href="toolchangers/daksh-v2/README.md"><img src="toolchangers/daksh-v2/0-daksh-v2.jpg" width="120" alt="DAKSH V2"></a> | <a id="daksh-v2"></a>[**DAKSH V2**](https://github.com/ankurv2k6/daksh-toolchanger-v2)<br>*Ankur Verma (3D Unplugged)*<br>Fully printed servo-less latch inspired by the Prusa XL. The carriage locks and unlocks a tool with an X move at the dock. Front-dock and rear-dock tool variants. | — | spring latch, the dock opens it | on the tool | [<2.5-4 s](https://github.com/ankurv2k6/daksh-toolchanger-v2) | 5 | Voron Trident, Voron 2.4, Voron 1.8, RatRig V-Core 3 | Klipper | CAD<br>[2024-06](https://github.com/ankurv2k6/daksh-toolchanger-v2/commit/6f9bed3) | [![GitHub stars](https://img.shields.io/github/stars/ankurv2k6/daksh-toolchanger-v2?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/ankurv2k6/daksh-toolchanger-v2)<br>[⏯️⁠13.2K](https://www.youtube.com/watch?v=v6QG2y4h36s) | [STL](https://github.com/ankurv2k6/daksh-toolchanger-v2/tree/main/STL)<br>[CAD](https://github.com/ankurv2k6/daksh-toolchanger-v2/tree/main/CAD)<br>[BOM](https://github.com/ankurv2k6/daksh-toolchanger-v2/tree/main/BOM)<br>[Config](https://github.com/ankurv2k6/daksh-toolchanger-v2/tree/main/Klipper)<br>[Video](https://www.youtube.com/watch?v=v6QG2y4h36s) | [Discord](https://discord.gg/wJqUzYxYXH) EN 927 |
+| <a href="toolchangers/lineux-toolchanger/README.md"><img src="toolchangers/lineux-toolchanger/0-lineux-toolchanger.jpg" width="120" alt="Lineux Toolchanger"></a> | <a id="lineux-toolchanger"></a>[**Lineux Toolchanger**](https://github.com/3dfiyMyLife/Lineux-Toolchanger)<br>*3dfiy My Life (formerly Bikin-Creative)*<br>Front-mounted changer with Dockslide, a dock that slides away so the stock build volume stays usable. Tool changes run on plain Klipper macros (BTC) without a plugin. The Sling variant fits an Ender-style bed slinger. | pins and bushings | magnets | on the tool | — | 5 | VzBot 330, Voron 2.4, Ender 3 (Sling) | Klipper macros | CAD<br>[2026-07](https://github.com/3dfiyMyLife/Lineux-Toolchanger/commit/033836a) | [![GitHub stars](https://img.shields.io/github/stars/3dfiyMyLife/Lineux-Toolchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/3dfiyMyLife/Lineux-Toolchanger)<br>[🧡⁠73](https://www.printables.com/model/1109204-lineux-tool-changer)<br>[⏯️⁠48K](https://www.youtube.com/watch?v=LZql-NJ3cAA) | [CAD](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/CAD)<br>[STL](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/STL)<br>[BOM](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/BOM)<br>[Manual](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/Manual)<br>[Config](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/Klipper)<br>[Files](https://www.printables.com/model/1109204-lineux-tool-changer)<br>[Video](https://www.youtube.com/watch?v=LZql-NJ3cAA) | [Discord](https://discord.gg/Xwqbjj4VjH) EN 1.1K |
+| <a href="toolchangers/misschanger/README.md"><img src="toolchangers/misschanger/0-misschanger.jpg" width="120" alt="MissChanger"></a> | <a id="misschanger"></a>[**MissChanger**](https://github.com/VIN-y/MissChanger)<br>*VIN-y*<br>Four corner pins with N52 magnets hold the tool, and a sliding ramp on the dock does the Z part of the docking move. You can convert back to a single Stealth Burner without tools. MCv2 moves the design to the Voron Trident with the A4T toolhead. | pins and bushings | magnets | on the tool | — | 4 | Voron 2.4, Voron Trident | Klipper, klipper-toolchanger fork | MCv2<br>[2026-07](https://www.printables.com/model/1533585-misschanger-v2) | [![GitHub stars](https://img.shields.io/github/stars/VIN-y/MissChanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/VIN-y/MissChanger)<br>[🧡⁠20](https://www.printables.com/model/1533585-misschanger-v2) | [CAD](https://github.com/VIN-y/MissChanger/tree/main/CADs)<br>[STL](https://github.com/VIN-y/MissChanger/tree/main/STL_%26_Assembly)<br>[Manual](https://github.com/VIN-y/MissChanger/blob/main/STL_%26_Assembly/MissChanger_Assembly_Manual.pdf)<br>[BOM](https://github.com/VIN-y/MissChanger/blob/main/STL_%26_Assembly/BOM.pdf)<br>[Config](https://github.com/VIN-y/MissChanger/tree/main/Klipper_Config)<br>[FW](https://github.com/VIN-y/klipper-toolchanger)<br>[Wiki](https://github.com/VIN-y/MissChanger/wiki)<br>[MCv2 Wiki](https://gitlab.com/misschanger/misschanger-v2/-/wikis/home)<br>[MCv2 Files](https://www.printables.com/model/1533585-misschanger-v2) | [Discord](https://discord.gg/qrb6HXNYxs) EN 2.2K |
+| <a href="toolchangers/clickchanger/README.md"><img src="toolchangers/clickchanger/0-clickchanger.jpg" width="120" alt="ClickChanger"></a> | <a id="clickchanger"></a>[**ClickChanger**](https://github.com/viesturz/ClickChanger)<br>*viesturz*<br>Skeletal toolheads with one shared CPAP part-cooling fan in the shuttle, connected through a servo valve. Two variants: 4 mm pins with bushings, or bearings on square rods. | pins and bushings | magnets | on the tool | — | — | Voron 2.4 | Klipper, klipper-toolchanger | 2.0<br>[2025-06](https://github.com/viesturz/ClickChanger/commit/2d7431fe501753efbc479ef5f6368b5cc72cc0d2) | [![GitHub stars](https://img.shields.io/github/stars/viesturz/ClickChanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/viesturz/ClickChanger)<br>[⏯️⁠21.9K](https://www.youtube.com/watch?v=bxkY-NfGOMM) | [CAD](https://github.com/viesturz/ClickChanger/tree/main/PinsVariant)<br>[BOM](https://github.com/viesturz/ClickChanger/blob/main/README-pins.md#bom)<br>[Manual](https://github.com/viesturz/ClickChanger/blob/main/CPAP.md)<br>[Config](https://github.com/viesturz/klipper-toolchanger/tree/main/examples/z%20probe/probe%20on%20T0)<br>[Video](https://www.youtube.com/playlist?list=PLqU7kX5nUJDT31KPcYAykZ2nuPKu_lhjn) | [Discord](https://discord.com/invite/xmDWrYGwVJ) EN 2.2K |
+| <a href="toolchangers/blackbox/README.md"><img src="toolchangers/blackbox/0-blackbox.jpg" width="120" alt="Blackbox CE"></a> | <a id="blackbox"></a>[**Blackbox CE**](https://github.com/Kbreezy24/blackbox)<br>*KB3D (Kbreezy24), orig. Marc Schömann*<br>Enclosed CoreXY tool-changing printer, 300×300×275 mm, with passive water cooling on all tools. One extruder motor on the X carriage drives the Bondtech gears of the mounted tool. TAMV tool alignment. | kinematic, Jubilee wedge plate | twist lock, motor | gears on the tool, motor on the carriage | — | 5 | Blackbox CE (own printer) | RepRapFirmware | V1.1 R1<br>[2025-02](https://github.com/Kbreezy24/blackbox/releases/tag/V1.1_R1) | [![GitHub stars](https://img.shields.io/github/stars/Kbreezy24/blackbox?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/Kbreezy24/blackbox)<br>[⏯️⁠9.5K](https://www.youtube.com/watch?v=8-DRsm7HQsg) | [STEP](https://github.com/Kbreezy24/blackbox/tree/master/CAD)<br>[STL](https://github.com/Kbreezy24/blackbox/tree/master/STLs)<br>[DXF](https://github.com/Kbreezy24/blackbox/tree/master/DXF)<br>[BOM](https://github.com/Kbreezy24/blackbox/tree/master/BOM)<br>[Manual](https://github.com/Kbreezy24/blackbox/tree/master/Guides)<br>[Config](https://github.com/Kbreezy24/blackbox/tree/master/Firmware%20+%20Slicer)<br>[Video](https://www.youtube.com/watch?v=8-DRsm7HQsg) | [Discord](https://discord.gg/fVtg7ga) EN 619 |
+| <a href="toolchangers/proforge/README.md"><img src="toolchangers/proforge/0-proforge.jpg" width="120" alt="ProForge"></a> | <a id="proforge"></a>[**ProForge**](https://github.com/Makertech3D/ProForge-5)<br>*Makertech 3D*<br>Quad-CoreXY tool-changer printers, sold as kits, with GPL-3.0 files. A servo turns a spring-loaded cam that locks the tool plate to a master plate on the carriage. The design draws on the E3D ToolChanger. ProForge 4 and 300 have full STEP models, ProForge 5 has only STLs. | — | cam, servo | on the tool | [~7 s](https://www.youtube.com/watch?v=kZDpSXT7a8A) | 5 | ProForge 4, 4.2, 300, and 5 (own printers) | Klipper, own macros | CAD<br>[2026-10](https://github.com/Makertech3D/ProForge-5/commit/d349b1a4c0645e62c620552e2f37b31e9fdfbab9) | [![GitHub stars](https://img.shields.io/github/stars/Makertech3D/Proforge-4?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/Makertech3D/Proforge-4)<br>[⏯️⁠34.2K](https://www.youtube.com/watch?v=xs0uCbAai-U) | [STEP (P4)](https://github.com/Makertech3D/Proforge-4/blob/main/Proforge%204.STEP.zip)<br>[STEP (P300)](https://github.com/Makertech3D/ProForge300/blob/main/ProForge%20300.STEP.zip)<br>[STL (P5)](https://github.com/Makertech3D/ProForge-5/tree/main/3D%20Printed%20Parts)<br>[Config (P5)](https://github.com/Makertech3D/ProForge-5/tree/main/Config%20Files)<br>[Manual (P5)](https://makertech-3d.dozuki.com/c/ProForge_5)<br>[BOM (P300)](https://docs.google.com/spreadsheets/d/11tMFYWeuSdlYLyPoK7uE3kZFWasaUpS3Rfe4Z1YwD74/edit)<br>[BOM (P4)](https://docs.google.com/spreadsheets/d/1Y5VUGZzWMNDWVGi7vUqABhzv31rmcmznpvWCIOyDUW4/edit?usp=sharing)<br>[Video](https://www.youtube.com/watch?v=xs0uCbAai-U) | [Discord](https://discord.com/invite/FwgXFUw4R4) EN 501<br>[Facebook](https://www.facebook.com/groups/proforge4) EN<br>[Facebook](https://www.facebook.com/groups/proforge5) EN<br>[Facebook](https://www.facebook.com/groups/proforge300) EN |
+| <a href="toolchangers/hydra/README.md"><img src="toolchangers/hydra/0-hydra.jpg" width="120" alt="Hydra"></a> | <a id="hydra"></a>[**Hydra**](https://github.com/alfskaar/Hydra)<br>*alfskaar (Sun & Sea)*<br>A minimal Stealthburner toolchanger for Voron 2.4: the 2025 version uses only 3 pins, 3 bushings per tool and a Voron extruder spring in the shuttle, with no bearings or adjustment screws. It runs on Marlin, with the author's tool-change code sent as a Marlin PR. | pins and bushings | magnets | on the tool | [~23-25 s](https://www.youtube.com/watch?v=dxacGMmqg3s) | 4 | Voron 2.4 | Marlin | Log<br>[2025-03](https://github.com/alfskaar/Hydra#readme) | [![GitHub stars](https://img.shields.io/github/stars/alfskaar/Hydra?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/alfskaar/Hydra)<br>[⏯️⁠549](https://www.youtube.com/watch?v=dxacGMmqg3s) | [STL](https://github.com/alfskaar/Hydra/tree/main/STLs)<br>[BOM](https://github.com/alfskaar/Hydra/tree/main/BOM)<br>[FW](https://github.com/MarlinFirmware/Marlin/pull/26956)<br>[Video](https://www.youtube.com/watch?v=dxacGMmqg3s) | — |
+| <a href="toolchangers/maxwells-razor/README.md"><img src="toolchangers/maxwells-razor/0-maxwells-razor.jpg" width="120" alt="Maxwell&#x27;s Razor"></a> | <a id="maxwells-razor"></a>[**Maxwell's Razor**](https://github.com/evanqhuang/maxwells-razor)<br>*Evan Huang (evanqhuang)*<br>A Maxwell kinematic coupling that is fully printed, with half-spheres instead of balls and dowels, held by 6 magnets on the carriage and 3 per tool. The docks are printed and purely mechanical. An optional 'metal' version uses a press-fit ball bearing and dowels. | Maxwell, printed | magnets | on the tool | [~9-11 s](https://github.com/user-attachments/assets/cc918851-83fa-48d1-bb6e-ddeb8659f7ee) | 2 | HyperCube Evolution | Klipper | v1.0<br>[2025-06](https://github.com/evanqhuang/maxwells-razor/releases/tag/v1.0) | [![GitHub stars](https://img.shields.io/github/stars/evanqhuang/maxwells-razor?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/evanqhuang/maxwells-razor) | [STEP](https://github.com/evanqhuang/maxwells-razor/tree/main/v1/STEP)<br>[STL](https://github.com/evanqhuang/maxwells-razor/tree/main/v1/STL)<br>[Manual](https://github.com/evanqhuang/maxwells-razor/blob/main/v1/README.md)<br>[Config](https://github.com/evanqhuang/maxwells-razor/tree/main/v1/klipper_config)<br>[Files](https://www.thingiverse.com/thing:7074453) | — |
+| <a href="toolchangers/sid-ender-3-toolchanger/README.md"><img src="toolchangers/sid-ender-3-toolchanger/0-sid-ender-3-toolchanger.jpg" width="120" alt="Ender 3 Toolchanger"></a> | <a id="sid-ender-3-toolchanger"></a>[**Ender 3 Toolchanger**](https://github.com/aximaker/ender-3-toolchanger)<br>*Sid Talks Linux (sidgames5 / Aximaker)*<br>Ender 3 Pro conversion where toolheads under 31 mm wide slide into a side dock raised above the bed; tools include an extruder head, a BLTouch head and a paste dispenser head. | side dock rails | — | Bowden | — | 2 | Ender 3 Pro | Klipper | Last seen<br>[2025-07](https://github.com/aximaker/ender-3-toolchanger) | [![GitHub stars](https://img.shields.io/github/stars/aximaker/ender-3-toolchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/aximaker/ender-3-toolchanger)<br>[⏯️⁠1.1K](https://www.youtube.com/watch?v=ySKlhTlgmOc) | [CAD](https://github.com/aximaker/ender-3-toolchanger/tree/main/CAD)<br>[BOM](https://github.com/aximaker/ender-3-toolchanger/tree/main/BOM)<br>[Config](https://github.com/aximaker/ender-3-toolchanger/tree/main/Scripts)<br>[Video](https://www.youtube.com/watch?v=ySKlhTlgmOc)<br>[Video](https://www.youtube.com/watch?v=0ltWi0j6fQU) | — |
 
-**Status**: Experimental/Alpha
-**GitHub**: https://github.com/totaldesaster/toolchanger
-**Developer**: totaldesaster
+## Hotend changers
 
-**Locking Mechanics**:
-- **Type**: Rotating magnet ring + Maxwell coupling.
-- **Magnets**: Ring of neodymium magnets with alternating N/S polarity.
-- **Motor**: 28BYJ-48 stepper rotates "lockplate".
-- **Coupling**: Steel balls + L-profiles = 6 contact points.
+One extruder stays on the carriage, and only the hotend changes. A servo or a pin on the dock opens the extruder as the hotend leaves.
 
-**Principle**:
-- Opposite poles aligned → attraction (locked).
-- Same poles aligned → repulsion (unlocked).
-- Stepper motor switches modes.
+| Photo | Hotend changer and why it’s interesting | Coupling | Lock | Change time | Tools | Base printers | Firmware | Latest version | Stars Likes Views | Links | Groups |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| <a href="toolchangers/cxchanger/README.md"><img src="toolchangers/cxchanger/0-cxchanger.jpg" width="120" alt="CxChanger"></a> | <a id="cxchanger"></a>[**CxChanger**](https://github.com/cx330-TXY/CxChanger)<br>*cx330-TXY*<br>Low-cost hotend changer: hotend modules are preheated in the dock before each change (OrcaSlicer ooze prevention), and the head's XY moves alone release the hotend and open the shared extruder. Docks plug parked nozzles with silicone and cool them with fans. | Maxwell | magnets | — | — | Voron 2.4, Voron Trident, other printers with an XY head | Klipper macros | CAD<br>[2026-09](https://github.com/cx330-TXY/CxChanger/commit/12e6b79) | [![GitHub stars](https://img.shields.io/github/stars/cx330-TXY/CxChanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/cx330-TXY/CxChanger) | [CAD](https://github.com/cx330-TXY/CxChanger/tree/main/CAD)<br>[BOM](https://github.com/cx330-TXY/CxChanger/blob/main/5.5%E7%89%88%E6%9C%ACbom.xlsx)<br>[Config](https://github.com/cx330-TXY/CxChanger/tree/main/klipper)<br>[Manual](https://github.com/cx330-TXY/CxChanger/blob/main/EN-translation/README-EN.md)<br>[Video](https://www.bilibili.com/video/BV1C15s6UERS/) | — |
+| <a href="toolchangers/yudx/README.md"><img src="toolchangers/yudx/0-yudx.jpg" width="120" alt="YUDX"></a> | <a id="yudx"></a>[**YUDX**](https://github.com/dumplinglab/YUDX-tool-changer)<br>*dumpling lab (dumplinglab)*<br>INDX-inspired hotend changer: a one-way-bearing dock mechanism and a shared spring-and-gear 'dynamic extruder' on the head give about 1 s changes. Tools are Bambu hotends that can preheat while parked. The 2026.10 revision makes the Maxwell coupling clamp tighter as extrusion force rises. | Maxwell | push latch, the dock works it | [~1 s](https://github.com/dumplinglab/YUDX-tool-changer) | — | Voron 2.4, Voron Trident | RepRapFirmware | 2026.10<br>[2026-10](https://github.com/dumplinglab/YUDX-tool-changer/commit/9b0f1b3) | [![GitHub stars](https://img.shields.io/github/stars/dumplinglab/YUDX-tool-changer?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/dumplinglab/YUDX-tool-changer)<br>[⏯️⁠54.1K](https://www.youtube.com/watch?v=Vm4MIgcpSWI) | [STEP](https://github.com/dumplinglab/YUDX-tool-changer/tree/main/CAD)<br>[STL](https://github.com/dumplinglab/YUDX-tool-changer/tree/main/STLs)<br>[CAD](https://github.com/dumplinglab/YUDX-tool-changer/tree/main/CNC%20Parts)<br>[BOM](https://github.com/dumplinglab/YUDX-tool-changer/blob/main/BOM.xlsx)<br>[Manual](https://github.com/dumplinglab/YUDX-tool-changer/blob/main/YUDX%20Assembly%20Instruction.pdf)<br>[Config](https://github.com/dumplinglab/YUDX-tool-changer/tree/main/Gcode/RepRapFirmware)<br>[Video](https://www.youtube.com/watch?v=Vm4MIgcpSWI) | [Discord](https://discord.gg/huHw8kzNXp) EN 1.1K |
+| <a href="toolchangers/medusahc/README.md"><img src="toolchangers/medusahc/0-medusahc.jpg" width="120" alt="MedusaHC"></a> | <a id="medusahc"></a>[**MedusaHC**](https://github.com/Irbis3D/MedusaHC)<br>*Irbis3D (Sergei Irbenek)*<br>Budget hotend changer with one extruder on the head. As a hotend leaves, a servo opens the extruder lever. It started as an add-on for the Duender CoreXY and has its own Klipper module. | pins and magnets | magnets | [~6-7 s](https://www.youtube.com/watch?v=F2OpeA6CTm0&t=1831s) | 4 | Duender; other CoreXY with changes | Klipper, own module | V0.2<br>[2026-08](https://github.com/Irbis3D/MedusaHC/blob/main/CHANGELOG.md) | [![GitHub stars](https://img.shields.io/github/stars/Irbis3D/MedusaHC?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/Irbis3D/MedusaHC)<br>[🧡⁠150](https://www.printables.com/model/1799766-medusahc-v02-budget-hotend-toolchanger)<br>[⏯️⁠104K](https://www.youtube.com/watch?v=rfKapRc0Rds) | [STEP](https://github.com/Irbis3D/MedusaHC/tree/main/STEP)<br>[STL](https://github.com/Irbis3D/MedusaHC/tree/main/STLs)<br>[Files](https://www.printables.com/model/1799766-medusahc-v02-budget-hotend-toolchanger)<br>[BOM](https://docs.google.com/spreadsheets/d/1xkOzb10DBJzalW4n1tYroh-m_ZFsTQipC1BpUh5ZMWY/edit?gid=1290815756#gid=1290815756)<br>[Manual](https://drive.google.com/file/d/1KkSGdeQZzl4gnCMKlBloHfCNIlD4JwAP/view)<br>[Config](https://github.com/Irbis3D/MedusaHC/tree/main/config)<br>[FW](https://github.com/Irbis3D/MedusaHC/tree/main/klippy)<br>[Video](https://www.youtube.com/watch?v=hpV5Z1TnGdY) | [Discord](https://discord.gg/ae44FHv786) EN 2.9K |
+| <a href="toolchangers/e3ng-toolchanger/README.md"><img src="toolchangers/e3ng-toolchanger/0-e3ng-toolchanger.jpg" width="120" alt="E3NG Toolchanger"></a> | <a id="e3ng-toolchanger"></a>[**E3NG Toolchanger**](https://github.com/emna2881/E3NG-Toolchanger)<br>*EMNA (emna2881)*<br>Hotend-swapping mod for the Ender-3 NG (E3NG by RH3D): one BMG-style extruder and a servo cam that opens the idler, with an extruder inspired by MedusaHC. Docks sit on an extrusion across the front, and tools are TZ-V6 3.0 hotends. Beta. | — | magnets | — | — | Ender-3 NG | — | Log<br>[2026-07](https://github.com/emna2881/E3NG-Toolchanger/blob/main/Changelog.md) | [![GitHub stars](https://img.shields.io/github/stars/emna2881/E3NG-Toolchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/emna2881/E3NG-Toolchanger)<br>[🧡⁠315](https://www.printables.com/model/1786963-e3ng-toolchanger)<br>[⏯️⁠5.2K](https://www.youtube.com/watch?v=WKBszFWHkbQ) | [STEP](https://github.com/emna2881/E3NG-Toolchanger/tree/main/CAD)<br>[STL](https://github.com/emna2881/E3NG-Toolchanger/tree/main/STLs)<br>[Files](https://www.printables.com/model/1786963-e3ng-toolchanger)<br>[Manual](https://github.com/emna2881/E3NG-Toolchanger/blob/main/Docs/build_guide.md)<br>[Video](https://www.youtube.com/watch?v=WKBszFWHkbQ) | — |
+| <a href="toolchangers/lineux-hotswap/README.md"><img src="toolchangers/lineux-hotswap/0-lineux-hotswap.jpg" width="120" alt="Lineux Hotswap"></a> | <a id="lineux-hotswap"></a>[**Lineux Hotswap**](https://github.com/3dfiyMyLife/Lineux-Hotswap)<br>*3dfiy My Life (3dfiyMyLife), Lineux team*<br>Keeps the extruder, the part fan, and the toolboard on the carriage. A pin on the dock opens the extruder idler as the hotend leaves, so no servo is needed. | cap nuts in ring bushings | magnets | — | 4 | VzBot 330, Voron 2.4, Voron Trident | Klipper macros | CAD<br>[2026-10](https://github.com/3dfiyMyLife/Lineux-Hotswap/commit/dc33a1a) | [![GitHub stars](https://img.shields.io/github/stars/3dfiyMyLife/Lineux-Hotswap?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/3dfiyMyLife/Lineux-Hotswap)<br>[⏯️⁠19.9K](https://www.youtube.com/watch?v=sOk1mblA44g) | [CAD](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/CAD)<br>[STL](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/STLs)<br>[BOM](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/BOM)<br>[Manual](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/Manuals)<br>[Config](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/Klipper)<br>[Video](https://www.youtube.com/watch?v=sOk1mblA44g) | [Discord](https://discord.gg/Xwqbjj4VjH) EN 1.1K |
+| <a href="toolchangers/spark/README.md"><img src="toolchangers/spark/0-spark.jpg" width="120" alt="Spark"></a> | <a id="spark"></a>[**Spark**](https://github.com/HenryLi-0/spark)<br>*HenryLi-0 (Henry Li)*<br>Self-built small CoreXY printer (Hack Club Blueprint). A spring latch, magnets, and a guide pick each tool from a docking bay, with no tool-lock motor. One extruder motor on the carriage drives gears on the mounted tool. | latch, magnets, and a guide | spring latch, the dock opens it | — | 3 | Spark (own printer) | Klipper | CAD<br>[2026-06](https://github.com/HenryLi-0/spark/commit/adde8fd71ce7f7aa92d4ec3a96945d84bf1aa9f9) | [![GitHub stars](https://img.shields.io/github/stars/HenryLi-0/spark?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/HenryLi-0/spark)<br>[⏯️⁠136](https://www.youtube.com/watch?v=ktODngPF7UI) | [CAD](https://cad.onshape.com/documents/2b9020a6dc26b5be6a34c293/w/4aea5c5de00aac87e58ab18a/e/e89b27766cadd97ed58f8716)<br>[STEP](https://github.com/HenryLi-0/spark/tree/main/CAD)<br>[BOM](https://github.com/HenryLi-0/spark/blob/main/BOM.csv)<br>[Config](https://github.com/HenryLi-0/spark/blob/main/firmware/config.cfg)<br>[Video](https://www.youtube.com/watch?v=ktODngPF7UI) | — |
 
-**Features**:
-- Almost entirely 3D-printed.
-- Very low BOM cost.
-- **No servo** — only small stepper.
-- Tolerant to light collisions (tool self-seats).
-- Good for light Bowden tools.
+## Concepts and prototypes
 
-**Firmware**:
-- Klipper (macros in repository).
+Designs that are worth a look but are not ready to build: the files are not public yet, or nobody other than the author built one.
 
----
+| Photo | Toolchanger and why it’s interesting | Type | Status | Coupling | Lock | Latest version | Stars Likes Views | Links |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| <a href="toolchangers/quindec/README.md"><img src="toolchangers/quindec/0-quindec.jpg" width="120" alt="Quindec"></a> | <a id="quindec"></a>[**Quindec**](https://github.com/srinn/quindec-toolchanger)<br>*Srin (srinn)*<br>High-density hotend changer that fits up to 15 tools on a 350 mm Voron 2.4, with common and cheap parts. Only the Tool Carriage Holder needs changes for other CoreXY printers. The author plans to open the files and now runs a closed beta. | Hotend changer | Closed beta, files not public | — | — | First video<br>[2026-01](https://www.youtube.com/watch?v=Pdesunm21xI) | [![GitHub stars](https://img.shields.io/github/stars/srinn/quindec-toolchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/srinn/quindec-toolchanger)<br>[⏯️⁠8K](https://www.youtube.com/watch?v=941lrKT-fIY) | [BOM](https://docs.google.com/spreadsheets/d/1nJBv6CMfGyc1glqEgBD53pvTv2HscVy6cldr4ujhJa0/edit?usp=sharing)<br>[Video](https://www.youtube.com/watch?v=-aM5X-14fe0)<br>[Video](https://www.youtube.com/watch?v=941lrKT-fIY) |
 
-### 2.6 Lineux Toolchanger — Pure Klipper Macros
+## Legacy designs
 
-**Status**: Working
-**GitHub**: https://github.com/Bikin-Creative/Lineux-Toolchanger
-**Developer**: Bikin-Creative / 3dfiy My Life
+Designs that are no longer developed. The files still work. A design is legacy in three cases: it has no update in two years and no group with 100 or more members, its repository is archived, or a newer version replaced it.
 
-**Locking Mechanics**:
-- **Type**: Front-mounted docks with DockSlide.
-- **Control**: Pure Klipper macros (no third-party plugins).
+| Photo | Toolchanger and why it’s interesting | Type | Coupling | Lock | Change time | Latest version | Stars Likes Views | Links | Groups |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| <a href="toolchangers/e3d-toolchanger/README.md"><img src="toolchangers/e3d-toolchanger/0-e3d-toolchanger.jpg" width="120" alt="E3D ToolChanger"></a> | <a id="e3d-toolchanger"></a>[**E3D ToolChanger**](https://github.com/e3donline/ToolChanger)<br>*E3D*<br>The first widely sold open toolchanger. A tool plate puts 3 balls into 3 pairs of dowel pins, and a motor-driven shaft and ramp twist-locks it. Tools: Hemera, Revo Hemera XS, or V6 with Bowden. The kit is discontinued, but the files stay open. No update since 2023-03. | Tool changer | Maxwell | twist lock, motor | — | CAD<br>[2023-03](https://github.com/e3donline/ToolChanger/commit/d36e0c7) | [![GitHub stars](https://img.shields.io/github/stars/e3donline/ToolChanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/e3donline/ToolChanger)<br>[🧡⁠48](https://www.printables.com/model/386697-motion-system-e3d-toolchanger)<br>[⏯️⁠489K](https://www.youtube.com/watch?v=C7wYfaHT1g0) | [STEP](https://github.com/e3donline/ToolChanger/tree/master/STPs)<br>[STL](https://github.com/e3donline/ToolChanger/tree/master/STLs)<br>[Drawings](https://github.com/e3donline/ToolChanger/tree/master/PDFs)<br>[Motion System files](https://github.com/e3donline/Motion-System)<br>[Config](https://github.com/e3donline/RepRapFirmware-SD)<br>[Slicer](https://github.com/e3donline/Slicer-Profiles)<br>[Files](https://www.printables.com/model/386697-motion-system-e3d-toolchanger)<br>[Video](https://www.youtube.com/watch?v=C7wYfaHT1g0) | — |
+| <a href="toolchangers/wp-daksh/README.md"><img src="toolchangers/wp-daksh/0-wp-daksh.jpg" width="120" alt="WP-DAKSH"></a> | <a id="wp-daksh"></a>[**WP-DAKSH**](https://github.com/ankurv2k6/wp-daksh-toolchanger)<br>*Ankur Verma (3D Unplugged)*<br>Earlier fully printed DAKSH generation for a Voron Trident. A single servo turns a camshaft that locks the tool. Nozzle wiper on the dock and a 4x4 LED matrix on the toolhead. No update since 2023-03. | Tool changer | — | cam, servo | [~10 s](https://github.com/ankurv2k6/wp-daksh-toolchanger) | STL<br>[2023-03](https://github.com/ankurv2k6/wp-daksh-toolchanger/commit/a113e4f) | [![GitHub stars](https://img.shields.io/github/stars/ankurv2k6/wp-daksh-toolchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/ankurv2k6/wp-daksh-toolchanger)<br>[🧡⁠100](https://www.printables.com/model/565264-wp-daksh-3d-printed-tool-changer)<br>[⏯️⁠60.8K](https://www.youtube.com/watch?v=1WqDcpxC3-o) | [STL](https://github.com/ankurv2k6/wp-daksh-toolchanger/tree/main/STL)<br>[CAD](https://github.com/ankurv2k6/wp-daksh-toolchanger/tree/main/CAD)<br>[Config](https://github.com/ankurv2k6/wp-daksh-toolchanger/tree/main/firmware/config)<br>[BOM](https://docs.google.com/spreadsheets/d/12ISdJoCqgUTPsUwRrQ3VZWM-GBWw20C0cgHo7VGqMWU)<br>[Files](https://www.printables.com/model/565264-wp-daksh-3d-printed-tool-changer)<br>[Video](https://www.youtube.com/watch?v=1WqDcpxC3-o) | [Discord](https://discord.gg/Kz9VC8rWPg) EN 1.3K |
+| <a href="toolchangers/magswitch-toolchanger/README.md"><img src="toolchangers/magswitch-toolchanger/0-magswitch-toolchanger.jpg" width="120" alt="MagSwitch Toolchanger"></a> | <a id="magswitch-toolchanger"></a>[**MagSwitch Toolchanger**](https://github.com/jera-sea/MagSwitch-Toolchanger)<br>*FrozenBubble (jera-sea)*<br>Magswitch lock: a move against the dock turns an axial-flux-style ring of magnets (6 on the tool, 6 on the carriage) that pulls a printed kinematic coupling together. No servo and no motor. The author reports under 4 seconds per tool change. No update since 2024-08. | Tool changer | kinematic, printed | rotating magnet ring, the dock turns it | [~3-4 s](https://www.youtube.com/watch?v=9IsZiHBQRe4) | CAD<br>[2024-08](https://github.com/jera-sea/MagSwitch-Toolchanger/commit/2ae9c036ea1f55afa616218ea949c22cfe37cc65) | [![GitHub stars](https://img.shields.io/github/stars/jera-sea/MagSwitch-Toolchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/jera-sea/MagSwitch-Toolchanger)<br>[🧡⁠46](https://www.printables.com/model/920073-axial-flux-magswitch-toolchanger-built-on-ratrig-v/files)<br>[⏯️⁠25.4K](https://youtube.com/shorts/qhA7fiyDxwE) | [STEP](https://www.printables.com/model/920073-axial-flux-magswitch-toolchanger-built-on-ratrig-v/files)<br>[CAD](https://cad.onshape.com/documents/0c01c7dd72676bd7e8323898/w/98418f33d58f65eefdbc478d/e/0eb2fa1c1fd68932fc3bc01e)<br>[Config](https://github.com/jera-sea/MagSwitch-Toolchanger/tree/main/config/toolchanger)<br>[Video](https://www.youtube.com/watch?v=AjeeFMp68dM) | — |
 
-**Compatibility**:
-- VzBot 330, Voron 2.4.
-- Hotends: E3D Revo Voron, Trianglelab CHC.
-- Toolheads: DragonBurner, Lineux One.
+## Other designs
 
-**Requirements**:
-- ~120 W per tool (experimental high-flow hotends).
+[OTHER.md](OTHER.md) keeps the other designs, for history: more legacy designs, concepts and prototypes, and designs that do not meet the [rules](CONTRIBUTING.md#what-belongs-in-the-catalog), each with the reason. The [gallery](GALLERY.md) shows the main picture of each design in the tables.
 
----
+## Column notes
 
-### 2.7 Doot Changer — $20 BOM
+**Toolchanger:** If the design has a repository, the name links to it. Otherwise it links to the creator's project page. Within each table, rows are sorted by GitHub stars, highest first. Designs without a repository are sorted by their highest like count.
 
-**Status**: Beta (abandoned but functional)
-**GitHub**: https://github.com/AmyTheCute/The-Doot-Changer
-**Developer**: Amy / AmyTheBun
+**Photo:** The main picture of the design. Click it to open the toolchanger page with all pictures, ports, variants, and builds by other people. The [gallery](GALLERY.md) shows the main pictures in one grid.
 
-**Locking Mechanics**:
-- **Type**: Magnetic coupling with locating pins.
-- **Variants**: Mag (purely magnetic) and Twist (with motor lock).
+**Coupling:** How the tool locates on the carriage. Maxwell is three round parts that sit in three pairs of pins or grooves. Pins and bushings means that pins on one side slide into bushings on the other. Cap nuts in ring bushings means that three dome nuts each sit in the hole of a ring.
 
-**Compatibility**:
-- Hypercube Evolution and derivatives.
+**Lock:** What holds the tool on the carriage, for example magnets, a latch, a cam, or a twist lock. After the comma, the cell says what opens the lock: a servo, a motor, or a move against the dock.
 
-**Cost**:
-- **~$20 BOM**, ~$150 full upgrade (including additional hardware).
+**Type:** The catalog table that fits the design. `Tool changer, Bowden` means that each tool has its own extruder on the frame.
 
----
+**Status:** What is public for a concept or prototype: renders, files, a working build, or only a video.
 
-### 2.8 Proforge 4 — Quad-Core-XY
+**Extruder:** `on the tool` means that each tool carries its own extruder. `Bowden` means that each tool has its own extruder on the frame. In a hotend changer, one extruder on the carriage is shared by all hotends.
 
-**Status**: Commercial / Open-source hybrid
-**GitHub**: https://github.com/Makertech3D/Proforge-4
-**Developer**: Makertech3D
+**Change time:** Seconds from the last move of the old tool to the first move of the new tool, without purge, prime, and heating. The link goes to the author's number or to the video that we timed. If sources differ, the cell shows the range. `—` means no reliable figure.
 
-**Mechanics**:
-- E3D-style kinematic coupling based on Quad-Core-XY motion.
+**Tools:** The most tools that the author shows working.
 
-**Features**:
-- Build volume: 400×300×400 mm.
-- 4 print heads.
-- 60k mm/s² acceleration (claimed).
-- ~13 min ABS Benchy (marketing demonstration case).
+**Latest version:** The date of the latest public revision, linked to its source. A tagged release or a changelog comes first. Next is the last CAD commit or file upload, then the first publication. The label names the revision or the source: `CAD` or `STEP` for a CAD commit, `Files` for a file upload, `Log` for a changelog, and `Last seen` for the latest public post or video.
 
----
+**Stars Likes Views:** The gray badge shows live GitHub stars. 🧡 is the like count on the author's Printables page. ⏯️ is the view count of the author's most-viewed video about the design. The counts were checked on 2026-10-24. Copies and remixes by other people do not count. `—` means no count was found.
 
-### 2.9 3D Printed Magnetic Toolchanger (D_P_R)
+**Links:** `STEP` is a STEP model, `CAD` is native CAD such as Fusion or FreeCAD, and `STL` is printable parts. `Files` is a mixed set of design files, `BOM` is the bill of materials, and `Manual` is the build guide. `Wiki`, `Config`, `FW` (firmware), and `Video` go to those pages. `—` means no direct link was found.
 
-**Status**: Prototype / Concept (legendary prototype)
-**Instructables**: https://www.instructables.com/Magnetic-3D-Printed-Toolchnager/
-**Author**: D_P_R
+**Groups:** Builder communities for the design, its family, or its creator, checked 2026-10-24. Official groups come first, then the largest. Each line shows the platform, the language, and the member count. No number means the platform hides the count.
 
-**Locking Mechanics**:
-- **Type**: Kinematic coupling + servo-driven magnetic twist-lock.
-- **Coupling**: 3 balls + 3 V-grooves (E3D-style).
-- **Locking**: Servo rotates magnet sector, providing attraction/repulsion.
+## How to contribute
 
-**Goal**:
-- Replicate E3D ToolChanger idea **without CNC parts**,
-- Use only 3D-printed parts and off-the-shelf hardware.
+Use the [Add a toolchanger](https://github.com/vvchik/awesome-toolchangers/issues/new?template=add-toolchanger.yml) form to suggest a design, or the [Fix a row](https://github.com/vvchik/awesome-toolchangers/issues/new?template=fix-row.yml) form to correct a value. Pull requests are welcome. [CONTRIBUTING.md](CONTRIBUTING.md) has the inclusion rules, the sections, and the picture rules.
 
-**Compatibility**:
-- CoreXY with MGN9H X-axis.
-- Requires custom belt adapter.
+## Similar projects
 
-**Features**:
-- One of the first fully open-source magnetic toolchanger prototypes.
-- Author honestly marks it as "prototype, not finished project", but CAD files are available and serve as excellent reference for own experiments.
-
----
-
-## Part 3: Hotend Module / Hotend Pod Interfaces
-
-Here is the **meta-level**: docking geometry, interfaces, and standards that can be used for your own modular hotends or mini-toolchangers.
-
-### 3.1 Maxwell Kinematic Coupling
-
-**Geometry**:
-- 3 V-grooves × 2 contact points = 6 constraints.
-- V-grooves positioned at 120° to each other and "face" the center.
-- Provides sub-micron repeatability with proper mechanics.
-
-**Implementations**:
-
-| Project                   | Balls material    | Groove material      | Features                      |
-|--------------------------|-------------------|----------------------|-------------------------------|
-| E3D ToolChanger          | Precision steel   | Hardened V-grooves   | Servo cam lock                |
-| Jubilee                  | 8 mm balls        | Dowel/shoulder pins  | Wedge plate + cable lock      |
-| MadMax                   | Ferrous screws    | Printed sockets      | Magnetic-only coupling        |
-| totaldesaster toolchanger| Steel balls       | Steel L-profiles     | Rotating magnet lockplate     |
-
-**DIY**:
-- Many OpenSCAD/STEP implementations of Maxwell-coupling exist, including adapters for hotend pods.
-
----
-
-### 3.2 Kelvin Kinematic Coupling
-
-**Geometry**:
-- Cone (3 points) + V-groove (2 points) + Flat (1 point) = 6 constraints.
-- Central support defined by cone.
-
-**Features**:
-- Easier to implement in printing: one conical seat, one groove, one flat surface.
-- Used in bed plates of some DIY printers, and can also be adapted for hotend-pods.
-
-Examples:
-- Jubilee bed plate.
-- UMMD (Mark Rehorst).
-- Railcore II bed mounts.
-
----
-
-### 3.3 Bushing/Pin Interface (StealthChanger style)
-
-**Geometry**:
-- Bronze/hybrid bushings slide on hardened pins.
-- Usually 2–3 bushing/pin pairs for fixation.
-
-**Typical Dimensions**:
-- Pins: 4×12 mm, 4×13 mm (mix/match).
-
-**Advantages**:
-- Simpler than balls + V-grooves.
-- Worn bushings easily replaced.
-- Prints well, doesn't require complex metalwork.
-
-**Implementations**:
-- StealthChanger shuttle/backplate.
-- ClickChanger toolheads (in combination with other elements).
-
----
-
-### 3.4 Pogo Pin Interface
-
-**Typical Parameters**:
-- Ø ~1.5 mm body, press-fit ring ~1.6–1.7 mm.
-- Pitch: ~1.27 mm for SLA, ~2.3 mm for FDM (realistic).
-
-**Application**:
-- Power/sensor transmission to swappable module without wires.
-- Used in:
-  - ClickChanger (CPAP fan connection, sensors).
-  - Various custom toolchangers (contacts on dock stations).
-
-**Trend**:
-- Pogo pins giving way to **CAN toolhead boards** with 4-wire bus — fewer problems with wear and contact contamination.
-
----
-
-### 3.5 CAN Bus Toolhead Interface (Modern Standard)
-
-**Advantages**:
-- Only 4 wires: **CANH, CANL, +24V, GND**.
-- No wear contacts (connector fixed on tool).
-- Unique ID/UUID for each head.
-- Hot-swap support at firmware level (Klipper/RRF).
-
-**Popular Boards**:
-
-| Board         | Form-factor | Features                                    |
-|---------------|------------|---------------------------------------------|
-| BTT EBB36     | 36×36 mm   | TMC2209, ADXL345, 1 heater, 2 fans          |
-| BTT EBB42     | 42×42 mm   | Same, but larger                            |
-| LDO Nitehawk-36 | 36×36 mm | Tailored for StealthChanger/Voron           |
-| Mellow SB2040 | Compact    | RP2040-based, high integration              |
-| Huvud         | ~42×42 mm  | STM32F103, TMC2209, classic DIY CAN        |
-
-**Electrical**:
-- CAN speed: typically 1 Mbit/s.
-- CANH/CANL pairs — twisted pair 22–24 AWG.
-- 24 V power — heavy 20 AWG.
-- 120 Ω termination at bus ends.
-
----
-
-### 3.6 Prusa XL-Style Mechanical Latch
-
-**Principle**:
-- XY carriage movement actuates sliding latch on tool.
-- No servo required.
-- Support surfaces create self-tightening wedge.
-
-**Materials**:
-- Main latch body — 3D-printed (PETG-CF / PA-CF).
-- Key stress points — brass/steel inserts.
-
-**Open-source Implementations**:
-- **DAKSH V2** — most mature toolchanger with this principle.
-- **FoxChanger** — variant using 100% available parts.
-- Several prototypes on Discord/Reddit, inspired by Prusa XL mechanism teardown.
-
----
-
-## Part 4: Comparative Analysis
-
-### 4.1 Locking Mechanics
-
-| System            | Type                          | Servo/Stepper?              | Spring nuts? | Repeatability (reference)  |
-|-------------------|-------------------------------|-----------------------------|--------------|----------------------------|
-| E3D ToolChanger   | Maxwell + cam lock            | Micro-servo                 | No           | ~5 µm                      |
-| Jubilee           | Maxwell + twist lock          | Cable-driven (remote)       | No           | ~5 µm                      |
-| StealthChanger    | Bushings/pins + magnets       | No                          | No           | Very high                  |
-| TapChanger        | Bearings on rods              | No                          | No           | "Tap-equivalent"           |
-| MadMax            | Maxwell + magnets             | No                          | No           | ~0.002 mm range            |
-| DAKSH V2          | Prusa XL latch                | No                          | No           | High                       |
-| ClickChanger      | Bushings + pogo + CPAP        | Micro-servo for CPAP only   | No           | Good                       |
-| FoxChanger        | Prusa XL latch                | No                          | No           | TBD (beta)                 |
-| totaldesaster     | Rotating magnets + Maxwell    | Stepper for lockplate       | No           | Experimental               |
-| 3D Printed Mag TC | Maxwell + servo magnet lock   | Servo                       | No           | Prototype                  |
-
----
-
-### 4.2 Tool Mass and Impact on Speed
-
-| System          | Approximate toolhead mass | Impact on acceleration         |
-|-----------------|---------------------------|--------------------------------|
-| Jubilee         | ~200 g                    | Medium                         |
-| E3D ToolChanger | 250–350 g (Hemera)        | Below average                  |
-| StealthChanger  | < TapChanger              | Low                            |
-| TapChanger      | ~stock Voron toolhead     | Medium                         |
-| MadMax core     | ~50 g core + toolhead     | **Minimal** (XY-only TC)       |
-| ClickChanger    | "bare" head + CPAP        | Low                            |
-| DAKSH V2        | Stock Voron head          | Medium                         |
-
----
-
-### 4.3 Scaling (Number of Tools)
-
-| System        | Frame 300 mm | Frame 350 mm | Practical maximum      |
-|---------------|-------------|-------------|------------------------|
-| E3D           | 4           | 4           | 4                      |
-| Jubilee       | 4           | 4–5         | 5                      |
-| StealthChanger| 5           | **6**       | 6+                     |
-| TapChanger    | 5           | **6**       | 6                      |
-| MadMax        | 2 (tested)  | 2+          | TBD (geometry-dependent)|
-| Blackbox CE   | 4–5         | 5           | 5                      |
-| DAKSH V2      | Frame-dependent | Depends | Printer-dependent      |
-
----
-
-### 4.4 Firmware Requirements
-
-| System         | Primary firmware | Extension / Notes                        |
-|----------------|------------------|------------------------------------------|
-| E3D ToolChanger| RRF (Duet)       | T-tools macros, docking/undocking        |
-| Jubilee        | RRF / Klipper    | JubileeKlipper                           |
-| StealthChanger | **Klipper**      | DraftShift fork `klipper-toolchanger`    |
-| TapChanger     | **Klipper**      | `viesturz/klipper-toolchanger`           |
-| MadMax         | **Klipper**      | `klipper-toolchanger`, KTC2, Bikin       |
-| DAKSH V2       | **Klipper**      | Custom modules + macros                  |
-| ClickChanger   | **Klipper**      | `klipper-toolchanger`                    |
-| Blackbox CE    | RRF (Duet 3)     | Native TAMV                              |
-
----
-
-## Part 5: Selection Recommendations
-
-### Quick-Release Latch WITHOUT Spring-Loaded Nuts (High Priority)
-
-1. **DAKSH V2** — best candidate for fully mechanical, servo-less system with proven reliability (2000+ cycles).
-2. **StealthChanger** — optimal for Voron builds, good community support and commercial kits (LDO).
-3. **MadMax** — best for **static gantry** (Trident and derivatives) without liftbar: fast XY-only toolchanges.
-
-### Maximum Precision / Research Cases
-
-- **Jubilee** and **E3D ToolChanger** — academic standard, ~5 µm repeatability and excellent documentation.
-
-### Minimum Cost / Experimental Level
-
-- **MadMax** — ~$100 for conversion.
-- **Rotating Magnet Toolchanger (totaldesaster)** — minimal BOM with geared stepper.
-- **Doot Changer** — $20 BOM, suitable for Hypercube-class.
-
-### Maximum Number of Tools
-
-- **StealthChanger** and **TapChanger** — up to 6 tools on 350 mm Voron 2.4 frame.
-- **Blackbox CE / Proforge 4** — commercialized implementations with 4–5 heads.
-
----
-
-## Part 6: Sources and Useful Links
-
-**Mature Projects**:
-- E3D ToolChanger / Motion System:
-  - https://github.com/e3donline/Motion-System
-  - https://e3d-online.com
-- Jubilee: https://github.com/machineagency/jubilee
-- StealthChanger: https://github.com/DraftShift/StealthChanger
-- TapChanger: https://github.com/viesturz/tapchanger
-- Blackbox CE: https://github.com/Kbreezy24/blackbox
-
-**Beta / Experimental**:
-- MadMax: https://github.com/zruncho3d/madmax
-- DAKSH V2: https://github.com/ankurv2k6/daksh-toolchanger-v2
-- ClickChanger: https://github.com/viesturz/ClickChanger
-- FoxChanger: https://github.com/Noisyfox/FoxChanger
-- MissChanger: https://github.com/VIN-y/MissChanger
-- Lineux Toolchanger: https://github.com/Bikin-Creative/Lineux-Toolchanger
-- Doot Changer: https://github.com/AmyTheCute/The-Doot-Changer
-- Rotating Magnet Toolchanger: https://github.com/totaldesaster/toolchanger
-- 3D Printed Magnetic Toolchanger:
-  - https://www.instructables.com/Magnetic-3D-Printed-Toolchnager/
-
-**Firmware / Tooling**:
-- klipper-toolchanger (viesturz): https://github.com/viesturz/klipper-toolchanger
-- KTC2 (TypQxQ): https://github.com/TypQxQ/Klipper_ToolChanger
-- JubileeKlipper: https://github.com/SteveJWallace/JubileeKlipper
-
-**Community**:
-- Voron / DraftShift / Toolchanger Discord servers.
-- DoomCube Discord (`#madmax-toolchanger`).
-- ERCF/Multimaterial servers (discussions of StealthChanger, MadMax, DAKSH).
-
----
-
-## Contributing
-
-Pull requests are welcome:
-
-- Add **only open-source** projects (GPL, CC, CERN OHL, MIT, BSD, …).
-- Be sure to include:
-  - link to repository / Instructables / documentation;
-  - license (if specified);
-  - type of mechanics (kinematic, magnetic, mechanical latch, …).
-- Preferably attach a link to an image showing **the dock mechanism**.
-
----
+- [Awesome-Extruders](https://github.com/SartorialGrunt0/Awesome-Extruders): extruders for FDM printers.
+- [Awesome-Toolheads](https://github.com/SartorialGrunt0/Awesome-Toolheads): toolheads, many of them used as tools in the changers here.
+- [Awesome-Hotends](https://github.com/SartorialGrunt0/Awesome-Hotends): all-metal hotends, also the ones that the hotend changers here swap.
+- [Awesome 3D Printers](https://github.com/vvchik/awesome-3d-printers): open-design printers, with the base printers of these changers and the whole printers built around them.
 
 ## License
 
-The text of this list is licensed under [CC BY 4.0](LICENSE). The linked projects keep their own licenses.
-
+The text of this list is licensed under [CC BY 4.0](LICENSE). The linked projects keep their own licenses. Pictures keep the rights of their authors, who are credited on each toolchanger page.

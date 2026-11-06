@@ -1,0 +1,125 @@
+name: Add a toolchanger
+description: Suggest a toolchanger or hotend changer for the catalog. The fields match one catalog row.
+title: "Add: <toolchanger name>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill what you know. Empty fields are fine; a project page and one sentence are enough to start.
+        Rules: automatic change with a dock and a lock, published files, one row per design, no "best" or "fastest" claims.
+  - type: input
+    id: name
+    attributes:
+      label: Toolchanger name
+      placeholder: MadMax
+    validations:
+      required: true
+  - type: input
+    id: project-page
+    attributes:
+      label: Project page
+      description: Repository, Printables page, or the creator's own site. Not a homepage or a shop.
+      placeholder: https://github.com/zruncho3d/madmax
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author or team
+      placeholder: Zruncho
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it is interesting
+      description: One or two sentences. What makes it different from the designs already listed?
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Hotend changer (one extruder stays on the carriage)
+        - Tool changer (each tool has its own extruder)
+        - Port or mod of a listed design
+        - Concept or prototype
+    validations:
+      required: true
+  - type: input
+    id: base-printer
+    attributes:
+      label: Base printers
+      description: The printers the author supports.
+      placeholder: Voron Trident, Voron 0, any CoreXY with a front MGN9 or MGN12 rail
+  - type: input
+    id: coupling
+    attributes:
+      label: Coupling
+      description: How the tool locates on the carriage.
+      placeholder: Maxwell (pins and screws)
+  - type: input
+    id: lock
+    attributes:
+      label: Lock
+      description: What holds the tool on the carriage, for example magnets, a latch, a cam, or a twist lock, and what opens it.
+      placeholder: twist lock, motor
+  - type: dropdown
+    id: extruder
+    attributes:
+      label: Extruder
+      options:
+        - On the tool
+        - Bowden, each tool has its own extruder on the frame
+        - Shared, one extruder on the carriage for all hotends
+        - Not sure
+  - type: input
+    id: tools
+    attributes:
+      label: Tools
+      description: The most tools the author shows working.
+      placeholder: "2"
+  - type: input
+    id: change-time
+    attributes:
+      label: Change time and its source
+      description: Seconds from the last move of the old tool to the first move of the new tool, without purge, prime, and heating. Link the author's number or the video you timed.
+      placeholder: ~8 s, https://www.youtube.com/watch?v=...
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware
+      placeholder: Klipper, klipper-toolchanger
+  - type: input
+    id: latest
+    attributes:
+      label: Latest public revision and its source
+      description: Version or date, plus the link that proves it (release, changelog, CAD commit, file upload).
+      placeholder: CAD, 2025-03, https://github.com/zruncho3d/madmax/commit/b375a90
+  - type: textarea
+    id: links
+    attributes:
+      label: Direct links
+      description: One per line. CAD or STEP, STL, BOM, manual, wiki, config, firmware, creator's video.
+      placeholder: |
+        CAD: https://github.com/zruncho3d/madmax/tree/main/CAD
+        BOM: https://github.com/zruncho3d/madmax/blob/main/BOM.md
+  - type: textarea
+    id: groups
+    attributes:
+      label: Builder groups
+      description: Discord, Reddit, Telegram, Facebook, forum. Official groups first. Add the language and member count if visible.
+      placeholder: "Discord https://discord.gg/... EN 6.9K"
+  - type: input
+    id: license
+    attributes:
+      label: License of the design
+      placeholder: GPL-3.0
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: The design files are published and the license allows building it.
+          required: true
+        - label: I searched the catalog and this design is not already listed under another name.
+          required: true

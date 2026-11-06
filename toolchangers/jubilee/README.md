@@ -1,0 +1,48 @@
+# Jubilee
+
+[Catalog row](../../README.md#jubilee) · [Gallery](../../GALLERY.md)
+
+<img src="0-jubilee.jpg" width="420" alt="Jubilee">
+
+| Field | Value |
+| --- | --- |
+| Section | Tool changers |
+| Project page | [https://github.com/machineagency/jubilee](https://github.com/machineagency/jubilee) |
+| Author | Machine Agency (Joshua Vasquez) |
+| About | Complete open multi-tool CoreXY platform (300×300×300 mm) for printing, plotting, and lab tools. A twist lock that senses torque pulls the tool plate onto a kinematic coupling. The tool plates fit E3D tools. |
+| Coupling | Maxwell and wedge plate |
+| Lock | twist lock, motor |
+| Extruder | on the tool |
+| Change time | — |
+| Tools | 4 |
+| Base printers | Jubilee (own printer) |
+| Firmware | RepRapFirmware |
+| Latest version | V2.2.2<br>[2021-10](https://github.com/machineagency/jubilee/releases/tag/v2.2.2) |
+| Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/machineagency/jubilee?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/machineagency/jubilee) |
+| Links | [STEP](https://github.com/machineagency/jubilee/tree/main/frame)<br>[Files](https://github.com/machineagency/jubilee/tree/main/tools)<br>[BOM](https://docs.google.com/spreadsheets/d/1pRzBQxVzL9c4T9b1RrKvSjlSwJJhJ7NcbSV6iJUv0X0/edit#gid=0)<br>[Manual](https://jubilee3d.com/index.php?title=Assembly_Instructions)<br>[Wiki](https://jubilee3d.com/index.php?title=Main_Page)<br>[Config](https://github.com/machineagency/jubilee/tree/main/software/duet_config_files) |
+| Groups | [Discord](https://discord.gg/XkphRqb) EN 2K<br>[Reddit](https://www.reddit.com/r/Jubilee3D/) EN |
+
+## Pictures (25)
+
+<table>
+<tr><td align="center" width="33%"><a href="0-jubilee.jpg"><img src="0-jubilee.jpg" width="260" alt="Jubilee picture 0"></a><br><sub>Photo: <a href="https://github.com/machineagency/jubilee">Poofjunior</a></sub></td><td align="center" width="33%"><a href="1-jubilee.jpg"><img src="1-jubilee.jpg" width="260" alt="Jubilee picture 1"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Ss-unloaded.jpg">Poofjunior</a></sub></td><td align="center" width="33%"><a href="2-jubilee.jpg"><img src="2-jubilee.jpg" width="260" alt="Jubilee picture 2"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Ss-sit.jpg">Poofjunior</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="3-jubilee.jpg"><img src="3-jubilee.jpg" width="260" alt="Jubilee picture 3"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Ss-tool.jpg">Poofjunior</a></sub></td><td align="center" width="33%"><a href="4-jubilee.jpg"><img src="4-jubilee.jpg" width="260" alt="Jubilee picture 4"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Jubilee_v2.1.2.png">Poofjunior</a></sub></td><td align="center" width="33%"><a href="5-jubilee.jpg"><img src="5-jubilee.jpg" width="260" alt="Jubilee picture 5"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Jubilee_Splash.png">Poofjunior</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="6-jubilee.jpg"><img src="6-jubilee.jpg" width="260" alt="Jubilee picture 6"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Tool_layout.png">Poofjunior</a></sub></td><td align="center" width="33%"><a href="7-jubilee.jpg"><img src="7-jubilee.jpg" width="260" alt="Jubilee picture 7"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Tool_library_pics.png">Poofjunior</a></sub></td><td align="center" width="33%"><a href="8-jubilee.jpg"><img src="8-jubilee.jpg" width="260" alt="Jubilee picture 8"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Locking_tool.jpg">Poofjunior</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="9-jubilee.jpg"><img src="9-jubilee.jpg" width="260" alt="Jubilee picture 9"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Mounted_camera_inspection_tool.jpg">Poofjunior</a></sub></td><td align="center" width="33%"><a href="10-jubilee.jpg"><img src="10-jubilee.jpg" width="260" alt="Jubilee picture 10"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Laser_tool.jpg">Chris was here</a></sub></td><td align="center" width="33%"><a href="11-jubilee.jpg"><img src="11-jubilee.jpg" width="260" alt="Jubilee picture 11"></a><br><sub>Photo: <a href="https://jubilee3d.com/index.php?title=File:Metal_tool_plate.png">Poofjunior</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="12-jubilee.jpg"><img src="12-jubilee.jpg" width="260" alt="Jubilee picture 12"></a><br><sub>Version: 3D Printed Tool Changer, proof of concept</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=5lv6IPu8Qyc">Sonya Vasquez</a></sub></td><td align="center" width="33%"><a href="13-jubilee.jpg"><img src="13-jubilee.jpg" width="260" alt="Jubilee picture 13"></a><br><sub>Version: 3D Printed Tool Changer, proof of concept</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=5lv6IPu8Qyc&amp;t=32s">Sonya Vasquez</a></sub></td><td align="center" width="33%"><a href="14-jubilee.jpg"><img src="14-jubilee.jpg" width="260" alt="Jubilee picture 14"></a><br><sub>Version: 3D Printed Tool Changer, proof of concept</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=5lv6IPu8Qyc&amp;t=14s">Sonya Vasquez</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="15-jubilee.jpg"><img src="15-jubilee.jpg" width="260" alt="Jubilee picture 15"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=fRo3FUWs4Sg">Sonya Vasquez</a></sub></td><td align="center" width="33%"><a href="16-jubilee.jpg"><img src="16-jubilee.jpg" width="260" alt="Jubilee picture 16"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=yCwlqF1J5I8">Sonya Vasquez</a></sub></td><td align="center" width="33%"><a href="17-jubilee.jpg"><img src="17-jubilee.jpg" width="260" alt="Jubilee picture 17"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=QcsXqRd0ouY">Sonya Vasquez</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="18-jubilee.jpg"><img src="18-jubilee.jpg" width="260" alt="Jubilee picture 18"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=JSYYPvQmFVI">Sonya Vasquez</a></sub></td><td align="center" width="33%"><a href="19-jubilee.jpg"><img src="19-jubilee.jpg" width="260" alt="Jubilee picture 19"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=vFxDNbAok28">Sonya Vasquez</a></sub></td><td align="center" width="33%"><a href="20-jubilee.jpg"><img src="20-jubilee.jpg" width="260" alt="Jubilee picture 20"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=ibJpjYAcjaM">Sonya Vasquez</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="21-jubilee.jpg"><img src="21-jubilee.jpg" width="260" alt="Jubilee picture 21"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=vk-KnCFU3vs">Sonya Vasquez</a></sub></td><td align="center" width="33%"><a href="22-jubilee.jpg"><img src="22-jubilee.jpg" width="260" alt="Jubilee picture 22"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=cfSHss5j5KU">Sonya Vasquez</a></sub></td><td align="center" width="33%"><a href="23-jubilee.jpg"><img src="23-jubilee.jpg" width="260" alt="Jubilee picture 23"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=HDDvr3DhQMw">Sonya Vasquez</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="24-jubilee.jpg"><img src="24-jubilee.jpg" width="260" alt="Jubilee picture 24"></a><br><sub>Version: Cable-Driven Toolchanger V2</sub><br><sub>Photo: <a href="https://www.youtube.com/watch?v=65SgrvFtzXE">Sonya Vasquez</a></sub></td></tr>
+</table>
+
+## Notes
+
+- The twist lock rubs on the wedge plate, so the wedge plate wears out after thousands of lock cycles and needs replacement. ([source](https://jubilee3d.com/index.php?title=The_Remote_Elastic_Lock))
+- Jubilee ships RepRapFirmware config files for Duet boards, and its wiki lists community Klipper ports such as JubileeKlipper but no official Klipper path. ([source](https://jubilee3d.com/index.php?title=Assembly_Instructions))
+- The 409 mm tool rack holds 4 default extruder tools. ([source](https://jubilee3d.com/index.php?title=Specs))
+
+## Ports and variants
+
+- [3D Printed Tool Changer, proof of concept](https://www.youtube.com/watch?v=5lv6IPu8Qyc), *Sonya Vasquez (poofjunior, Machine Agency)*. A 2018 proof of concept of a 3D-printed kinematic-coupling toolchanger. It became Jubilee.
+- [Cable-Driven Toolchanger V2](https://www.thingiverse.com/thing:3805144), *poofjunior (YouTube channel now under the name Sonya Vasquez)*. Remote twist lock driven by a stepper over a Bowden-style spring-guide cable. In V2 a series-elastic spring and limit switches lock by torque instead of by position, so worn printed tool plates still lock. Accepts E3D tool plates and an all-printed plate.
