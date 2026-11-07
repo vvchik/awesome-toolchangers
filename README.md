@@ -2,7 +2,7 @@
 
 A curated catalog of open-source toolchangers and hotend changers for FDM 3D printers. Every design has one row with its coupling, lock, change time, latest revision, links, and builder groups. Designs of the same type sit side by side.
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Last update](https://img.shields.io/github/last-commit/vvchik/awesome-toolchangers?label=last%20update)](https://github.com/vvchik/awesome-toolchangers/commits/main) [![License CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)](LICENSE) [![Contribute](https://img.shields.io/badge/add%20a%20toolchanger-issue%20form-2da44e)](https://github.com/vvchik/awesome-toolchangers/issues/new?template=add-toolchanger.yml)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re) [![Last update](https://img.shields.io/github/last-commit/vvchik/awesome-toolchangers?label=last%20update)](https://github.com/vvchik/awesome-toolchangers/commits/main) [![License CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey)](LICENSE) [![Contribute](https://img.shields.io/badge/add%20a%20toolchanger-issue%20form-2da44e)](https://github.com/vvchik/awesome-toolchangers/issues/new?template=add-toolchanger.yml) [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua/)
 
 ## Contents
 
