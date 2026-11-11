@@ -39,3 +39,4 @@
 ## Builds by other people
 
 - [Voron 2.4 and Trident with CxChanger](https://www.bilibili.com/video/BV1f7h86cETC/), *阿国匠*. Voron 2.4 and Voron Trident fitted with the CxChanger hotend changer, with automatic tool offset calibration (BV11UbQ6aEJB).
+- [Voron 2.4 with CxChanger, 9 hotends](https://www.bilibili.com/video/BV1LMNs6kEUP/), *小汉故事*. Unmodified CxChanger on a Voron 2.4, with 9 hotends in rear docks and 3-second changes. [A second video](https://www.bilibili.com/video/BV1WP3i6iEPU/) shows nozzle offset calibration with 8 heads.
