@@ -28,3 +28,7 @@
 <tr><td align="center" width="33%"><a href="3-spark.jpg"><img src="3-spark.jpg" width="260" alt="Spark picture 3"></a><br><sub>Photo: <a href="https://github.com/HenryLi-0/spark">Henry Li (HenryLi-0)</a></sub></td><td align="center" width="33%"><a href="4-spark.jpg"><img src="4-spark.jpg" width="260" alt="Spark picture 4"></a><br><sub>Photo: <a href="https://github.com/HenryLi-0/spark">Henry Li (HenryLi-0)</a></sub></td><td align="center" width="33%"><a href="5-spark.jpg"><img src="5-spark.jpg" width="260" alt="Spark picture 5"></a><br><sub>Photo: <a href="https://github.com/HenryLi-0/spark">Henry Li (HenryLi-0)</a></sub></td></tr>
 <tr><td align="center" width="33%"><a href="6-spark.jpg"><img src="6-spark.jpg" width="260" alt="Spark picture 6"></a><br><sub>Photo: <a href="https://www.youtube.com/watch?v=ktODngPF7UI">Henry</a></sub></td></tr>
 </table>
+
+## Notes
+
+- The successor is in progress: [fermion (Spark v2)](https://github.com/HenryLi-0/fermion), a folding scissor-lift CoreXY with 3 tools that packs into a filament box. As of 2026-09 it has only design logs and sketches, with no CAD.

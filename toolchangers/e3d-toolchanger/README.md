@@ -9,12 +9,12 @@
 | Section | Legacy designs |
 | Project page | [https://github.com/e3donline/ToolChanger](https://github.com/e3donline/ToolChanger) |
 | Author | E3D |
-| About | The first widely sold open toolchanger. A tool plate puts 3 balls into 3 pairs of dowel pins, and a motor-driven shaft and ramp twist-locks it. Tools: Hemera, Revo Hemera XS, or V6 with Bowden. The kit is discontinued, but the files stay open. No update since 2023-03. |
+| About | The first widely sold open toolchanger. A tool plate puts 3 balls into 3 pairs of dowel pins, and a motor-driven shaft and ramp twist-locks it. Tools: Hemera, Revo Hemera XS, or V6 with Bowden. The kit is discontinued, but the files stay open. No update since 2024-03. |
 | Type | Tool changer |
 | Coupling | Maxwell |
 | Lock | twist lock, motor |
 | Change time | — |
-| Latest version | CAD<br>[2023-03](https://github.com/e3donline/ToolChanger/commit/d36e0c7) |
+| Latest version | Roto tool<br>[2024-03](https://www.printables.com/model/802772-e3d-revo-roto-toolchanger-mount) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/e3donline/ToolChanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/e3donline/ToolChanger)<br>[🧡⁠48](https://www.printables.com/model/386697-motion-system-e3d-toolchanger)<br>[⏯️⁠489K](https://www.youtube.com/watch?v=C7wYfaHT1g0) |
 | Links | [STEP](https://github.com/e3donline/ToolChanger/tree/master/STPs)<br>[STL](https://github.com/e3donline/ToolChanger/tree/master/STLs)<br>[Drawings](https://github.com/e3donline/ToolChanger/tree/master/PDFs)<br>[Motion System files](https://github.com/e3donline/Motion-System)<br>[Config](https://github.com/e3donline/RepRapFirmware-SD)<br>[Slicer](https://github.com/e3donline/Slicer-Profiles)<br>[Files](https://www.printables.com/model/386697-motion-system-e3d-toolchanger)<br>[Video](https://www.youtube.com/watch?v=C7wYfaHT1g0) |
 | Groups | — |
@@ -41,7 +41,7 @@
 
 ## Ports and variants
 
-- [Railcore Toolchanger](https://github.com/railcore/toolchanger), *Railcore community, led by Eric K Moyer (with Joshua Vasquez, J. Steve White, Tony Akens)*. Add-on for RailCore II that combines a remixed Jubilee tool plate and remote elastic lock with the original E3D tool face and lock shaft on a new Y carriage. The tool is mostly printed (BMG + V6), and parking posts mount on the frame or the halo.
+- [Railcore Toolchanger](https://github.com/railcore/toolchanger), *Railcore community, led by Eric K Moyer (with Joshua Vasquez, J. Steve White, Tony Akens)*. Add-on for RailCore II that combines a remixed Jubilee tool plate and remote elastic lock with E3D-derived carriage parts on a new Y carriage. The tool is mostly printed (BMG + V6), and parking posts mount on the frame or the halo.
 - [RC-TC (Railcore 300 tool changer)](https://github.com/chernogorsky/rc-tc), *chernogorsky*. RailCore 300 mod that takes standard E3D tool plates and docks, using the Jubilee twist lock and remote lock. It targets a 135 C chamber (HT motors moved out, HT plastics), and the mod can be removed by taking out the shaft.
 - [CHANGER](https://hackaday.io/project/175489-changer-a-toolchanger-new-interpreted), *Chuckonelli (Simon Wirz)*. A modular E3D-ToolChanger-based machine for multi-process tools (direct-drive printheads, 20 W laser, drag knife, PnP), with water cooling and HEPA filtering.
 - [RatRig V-Core 3 Tool Changer](https://www.printables.com/model/137147-ratrig-vcore-3-tool-changer), *psyvision (PsyVision on YouTube)*. Ports the E3D ToolChanger coupling to the RatRig V-Core 3 on an EVA-style carriage, for the 'OpenFront' belt mod. It adds its own 3030 docks and modular LGX Lite tools.

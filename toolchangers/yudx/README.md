@@ -15,8 +15,8 @@
 | Change time | [~1 s](https://github.com/dumplinglab/YUDX-tool-changer) |
 | Tools | 7 |
 | Printer | CoreXY, any gantry |
-| Firmware | RepRapFirmware |
-| Latest version | 2026.10<br>[2026-10](https://github.com/dumplinglab/YUDX-tool-changer/commit/9b0f1b3) |
+| Firmware | RepRapFirmware, Klipper |
+| Latest version | CAD<br>[2026-10](https://github.com/dumplinglab/YUDX-tool-changer/commit/52e8ef6) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/dumplinglab/YUDX-tool-changer?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/dumplinglab/YUDX-tool-changer)<br>[⏯️⁠54.1K](https://www.youtube.com/watch?v=Vm4MIgcpSWI) |
 | Links | [STEP](https://github.com/dumplinglab/YUDX-tool-changer/tree/main/CAD)<br>[STL](https://github.com/dumplinglab/YUDX-tool-changer/tree/main/STLs)<br>[CAD](https://github.com/dumplinglab/YUDX-tool-changer/tree/main/CNC%20Parts)<br>[BOM](https://github.com/dumplinglab/YUDX-tool-changer/blob/main/BOM.xlsx)<br>[Manual](https://github.com/dumplinglab/YUDX-tool-changer/blob/main/YUDX%20Assembly%20Instruction.pdf)<br>[Config](https://github.com/dumplinglab/YUDX-tool-changer/tree/main/Gcode/RepRapFirmware)<br>[Video](https://www.youtube.com/watch?v=Vm4MIgcpSWI) |
 | Groups | [Discord](https://discord.gg/huHw8kzNXp) EN 1.1K |
@@ -32,4 +32,9 @@
 
 ## Notes
 
+- On Bilibili the author is 饺子馅的3D打印小屋 and calls the changer 聿. [The first video](https://www.bilibili.com/video/BV11FSBB6E7w/) (2025-11) shows the first version, with 7 hotends on the author's own frame. [The second video](https://www.bilibili.com/video/BV1Sug76xE7s/) (2026-08) shows the inside of the extruder.
 - Printers that the author names: Voron 2.4, Voron Trident. ([source](https://github.com/dumplinglab/YUDX-tool-changer))
+
+## Builds by other people
+
+- [YUDX on a BBox test chassis](https://youtube.com/shorts/fybG1eVXkew), *sakitume (Sakitume Makes)*. 2026-10.

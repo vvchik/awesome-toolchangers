@@ -7,16 +7,16 @@
 | Field | Value |
 | --- | --- |
 | Section | Concepts and prototypes ([OTHER.md](../../OTHER.md)) |
-| Project page | [https://github.com/sakitume/BBox-KTC](https://github.com/sakitume/BBox-KTC) |
+| Project page | [https://github.com/sakitume/BBox-KTC/tree/454210ad923966efdba06891e0414830af77da98](https://github.com/sakitume/BBox-KTC/tree/454210ad923966efdba06891e0414830af77da98) |
 | Author | sakitume (Sakitume Makes) |
 | About | Hotend changer on the author's BBox CoreXY with up to 8 hotends in 3-bay dock triplets on a rear 2020 extrusion. A lateral move in the dock opens the extruder swing arm against a support rod, and screws on the back of the hotend attach magnetically to the dock. The author's own Klipper extension adds a web UI for dock and nozzle-probe calibration. |
 | Type | Hotend changer |
 | Status | Working build, no files |
 | Coupling | — |
 | Lock | extruder arm clamp, the dock opens it |
-| Latest version | Last seen<br>[2026-09](https://github.com/sakitume/BBox-KTC) |
+| Latest version | Last seen<br>[2026-09](https://www.youtube.com/watch?v=QqzJJWBxuFM) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/sakitume/BBox-KTC?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/sakitume/BBox-KTC)<br>[⏯️⁠13.4K](https://youtube.com/shorts/VmdlazyVDtU) |
-| Links | [FW](https://github.com/sakitume/BBox-KTC)<br>[Video (8 tools)](https://youtube.com/shorts/hkDlSAuNtN8)<br>[Video (in action)](https://www.youtube.com/watch?v=QqzJJWBxuFM) |
+| Links | [FW](https://github.com/sakitume/BBox-KTC/tree/454210ad923966efdba06891e0414830af77da98)<br>[Video (8 tools)](https://youtube.com/shorts/hkDlSAuNtN8)<br>[Video (in action)](https://www.youtube.com/watch?v=QqzJJWBxuFM) |
 
 ## Pictures (7)
 

@@ -17,7 +17,7 @@
 | Tools | 5 |
 | Printer | CoreXY, any gantry<br>bed slinger |
 | Firmware | Klipper macros |
-| Latest version | CAD<br>[2026-07](https://github.com/3dfiyMyLife/Lineux-Toolchanger/commit/033836a) |
+| Latest version | CAD<br>[2026-11](https://github.com/3dfiyMyLife/Lineux-Toolchanger/commit/1f25f49) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/3dfiyMyLife/Lineux-Toolchanger?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/3dfiyMyLife/Lineux-Toolchanger)<br>[🧡⁠73](https://www.printables.com/model/1109204-lineux-tool-changer)<br>[⏯️⁠48K](https://www.youtube.com/watch?v=LZql-NJ3cAA) |
 | Links | [CAD](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/CAD)<br>[STL](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/STL)<br>[BOM](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/BOM)<br>[Manual](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/Manual)<br>[Config](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/Klipper)<br>[Files](https://www.printables.com/model/1109204-lineux-tool-changer)<br>[Video](https://www.youtube.com/watch?v=LZql-NJ3cAA) |
 | Groups | [Discord](https://discord.gg/Xwqbjj4VjH) EN 1.1K |
@@ -44,3 +44,4 @@
 ## Ports and variants
 
 - [Rister Toolchanger](https://github.com/htsrjdrouse/rister-toolchanger), *Richard Rouse (htsrjdrouse, HTS Resources)*. Klipper CoreXY toolchanger for lab automation that mixes two FDM tools with a pipette liquid dispenser and a programmable-focus camera tool. It adds a wash station and click-to-coordinate camera calibration.
+- [Lineux Sling](https://github.com/3dfiyMyLife/Lineux-Toolchanger/tree/main/CAD/Full%20Printer%20Assembly/Lineux%20Sling), *3dfiy My Life*. The Lineux carriage, lock, and Dockslide on an Ender-3 bed slinger (Enderwire). [Video](https://www.youtube.com/watch?v=mUt0eSR4rhU)

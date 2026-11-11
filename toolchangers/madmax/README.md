@@ -41,6 +41,10 @@
 - The author estimates the conversion at about $100, and the conversion is fully reversible. ([source](https://github.com/zruncho3d/madmax))
 - Tool offset calibration is automatic with the Nudge probe. ([source](https://github.com/zruncho3d/madmax))
 
+## Ports and variants
+
+- [MadMax for E3NG](https://www.printables.com/model/1557998-madmax-for-e3ng), *Michael Cadiz*. Port to the Ender-3 NG. CC BY-NC-SA.
+
 ## Builds by other people
 
 - [Cocoanix Printer Zero G+ build](https://www.youtube.com/watch?v=y__r9sv_BTE), *Cocoanix 3D Printing*. MadMax conversion on the author's own Cocoanix Printer Zero G+ (a printer based on the Tronxy X5SA, 35 x 32 x 45 cm). The docks were redesigned to fit a fifth tool. Uses EBB36 CAN boards and Klipper.

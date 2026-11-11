@@ -11,10 +11,10 @@
 | Author | MihaiDesigns |
 | About | Printer with a revolving arm that moves 10+ hotends (plus a probe as a tool) between parking slots and a few heated pre-heat slots; the next hotend is preheated while the current one prints. |
 | Type | Hotend changer |
-| Status | Prototype, no files |
+| Status | Prototype, no files, paused since 2025 |
 | Coupling | kinematic mount |
 | Lock | latch with magnets |
-| Latest version | Last seen<br>[2022-11](https://mihaidesigns.com/pitstop3) |
+| Latest version | Last seen<br>[2023-11](https://www.youtube.com/watch?v=KofWZylVYjw) |
 | Stars Likes Views | [⏯️⁠73.9K](https://www.youtube.com/watch?v=wzug_HmM-FQ) |
 | Links | [Video (design)](https://www.youtube.com/watch?v=wzug_HmM-FQ)<br>[Video (Formnext firmware)](https://www.youtube.com/watch?v=DZfEvyKoTOw) |
 

@@ -13,7 +13,7 @@
 | Reason | The files show only the base printer. No coupling, lock, dock, or tool change is documented. |
 | Coupling | — |
 | Lock | — |
-| Latest version | Last seen<br>[2026-04](https://github.com/ChipCE/SnakeOil-Changer) |
+| Latest version | CAD<br>[2026-11](https://github.com/ChipCE/SnakeOil-Changer/commit/30a8722) |
 | Links | [Files](https://github.com/ChipCE/SnakeOil-Changer/tree/master/src)<br>[STEP](https://github.com/ChipCE/SnakeOil-Changer/blob/master/doc/frame/frame_260111.step)<br>[BOM](https://github.com/ChipCE/SnakeOil-Changer/blob/master/doc/frame/frame.md) |
 
 ## Pictures (2)

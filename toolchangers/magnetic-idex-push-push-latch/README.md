@@ -10,11 +10,11 @@
 | Project page | [https://www.youtube.com/watch?v=EZoxpfzPa4U](https://www.youtube.com/watch?v=EZoxpfzPa4U) |
 | Author | Magnetic IDEX 3D Printer (m_IDEX, dmitryr / dromanovich) |
 | Type | Tool changer |
-| Reason | One experimental video on an IDEX printer. No files for the latch. |
+| Reason | A latch that parks the heads of an IDEX printer. It is not a changer, although the latch files are public. |
 | Coupling | — |
 | Lock | push-push latch |
-| Latest version | Last seen<br>[2023-08](https://www.youtube.com/watch?v=EZoxpfzPa4U) |
-| Links | [Video](https://www.youtube.com/watch?v=EZoxpfzPa4U)<br>[BOM](https://docs.google.com/spreadsheets/d/1fb1T2YSfM-OhzU3zWx77bUNyia4o-GPZsPlaNYT4-vA/edit?usp=sharing) |
+| Latest version | Files<br>[2026-05](https://www.printables.com/model/567323-push-push-latch-actuator-aka-strike) |
+| Links | [Video](https://www.youtube.com/watch?v=EZoxpfzPa4U)<br>[BOM](https://docs.google.com/spreadsheets/d/1fb1T2YSfM-OhzU3zWx77bUNyia4o-GPZsPlaNYT4-vA/edit?usp=sharing)<br>[STEP](https://www.printables.com/model/567323-push-push-latch-actuator-aka-strike/files) |
 
 ## Pictures (3)
 

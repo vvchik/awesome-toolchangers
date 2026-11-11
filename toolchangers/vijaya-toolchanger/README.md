@@ -14,7 +14,7 @@
 | Status | Bench tests, no files |
 | Coupling | — |
 | Lock | permanent electromagnet |
-| Latest version | Last seen<br>[2024-06](https://www.youtube.com/watch?v=8qZWVmBb7m0) |
+| Latest version | Last seen<br>[2024-06](https://www.youtube.com/watch?v=lcpa8969MFk) |
 | Stars Likes Views | [⏯️⁠8.5K](https://www.youtube.com/watch?v=8qZWVmBb7m0) |
 | Links | [Video](https://www.youtube.com/watch?v=8qZWVmBb7m0)<br>[Video (piezo Z-probe)](https://www.youtube.com/watch?v=lcpa8969MFk) |
 

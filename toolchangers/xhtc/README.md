@@ -9,12 +9,12 @@
 | Section | Legacy designs ([OTHER.md](../../OTHER.md)) |
 | Project page | [https://github.com/xpix/XHTC](https://github.com/xpix/XHTC) |
 | Author | Frank Herrmann (xpix) |
-| About | Automatic tool changer for a Hypercube, based on René Jurack's design. Magnets hold the tool, and pogo pins make all tool connections in one move. OctoPrint before/after toolchange scripts drive the change. No update since 2018-04. |
+| About | Automatic tool changer for a Hypercube, based on René Jurack's design. Magnets hold the tool, and pogo pins make all tool connections in one move. OctoPrint before/after toolchange scripts drive the change. No update since 2019-08. |
 | Type | Tool changer |
 | Coupling | — |
 | Lock | magnets |
 | Change time | — |
-| Latest version | First release<br>[2018-04](https://github.com/xpix/XHTC) |
+| Latest version | Update<br>[2019-08](https://www.thingiverse.com/thing:3036622) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/xpix/XHTC?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/xpix/XHTC)<br>[⏯️⁠4K](https://www.youtube.com/watch?v=xUQaVA273kA) |
 | Links | [CAD](https://a360.co/2DpOXs6)<br>[CAD (extruder module)](https://a360.co/31B6Dh0)<br>[CAD (magnet holder)](https://a360.co/2JZUHQm)<br>[FW](https://github.com/xpix/Marlin)<br>[Config](https://github.com/xpix/XHTC/blob/master/toolchange_before.tmpl)<br>[PCB](https://oshpark.com/shared_projects/ypHD6yYr)<br>[Video](https://www.youtube.com/watch?v=tmCkdqE2O68) |
 | Groups | — |

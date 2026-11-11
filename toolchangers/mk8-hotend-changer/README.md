@@ -23,3 +23,7 @@
 <table>
 <tr><td align="center" width="33%"><a href="0-mk8-hotend-changer.jpg"><img src="0-mk8-hotend-changer.jpg" width="260" alt="Mk8 hotend changer picture 0"></a><br><sub>Photo: <a href="https://www.printables.com/model/1784948-mk8-hotend-changer">Dreadnought 3D</a></sub></td></tr>
 </table>
+
+## Notes
+
+- The author's newer changer is on a Duender CoreXY. One Sherpa-style extruder stays on the carriage, Bambu X1/P1 hotends change, and arms like those of the Prusa XL lock the tool. Four Shorts from 2026-01 to 2026-06 show the work, with no files and no tool change yet: [part 1](https://www.youtube.com/shorts/rRtiR5hQmD4), [part 2](https://www.youtube.com/shorts/yqbPEt5TG74), [part 3](https://www.youtube.com/shorts/jzFaU6c-_uw), [part 4](https://www.youtube.com/shorts/3UD0Sh-ljyw).

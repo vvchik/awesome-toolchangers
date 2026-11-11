@@ -14,7 +14,7 @@
 | Status | Working build, no files |
 | Coupling | kinematic mount: steel balls on rods |
 | Lock | magnet ring, turned to release |
-| Latest version | Last seen<br>[2026-09](https://www.youtube.com/watch?v=KamrUvCROx8) |
+| Latest version | Last seen<br>[2026-09](https://www.youtube.com/watch?v=Ln2aJkhUCsk) |
 | Stars Likes Views | [⏯️⁠2.2K](https://www.youtube.com/watch?v=KamrUvCROx8) |
 | Links | [Video (prototyping)](https://www.youtube.com/watch?v=KamrUvCROx8)<br>[Video (progress)](https://www.youtube.com/watch?v=Ln2aJkhUCsk) |
 

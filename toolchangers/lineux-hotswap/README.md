@@ -16,7 +16,7 @@
 | Tools | 4 |
 | Printer | CoreXY, any gantry |
 | Firmware | Klipper macros |
-| Latest version | CAD<br>[2026-10](https://github.com/3dfiyMyLife/Lineux-Hotswap/commit/dc33a1a) |
+| Latest version | Beta r2<br>[2026-11](https://github.com/3dfiyMyLife/Lineux-Hotswap/commit/11f9fd8) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/3dfiyMyLife/Lineux-Hotswap?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/3dfiyMyLife/Lineux-Hotswap)<br>[⏯️⁠19.9K](https://www.youtube.com/watch?v=sOk1mblA44g) |
 | Links | [CAD](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/CAD)<br>[STL](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/STLs)<br>[BOM](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/BOM)<br>[Manual](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/Manuals)<br>[Config](https://github.com/3dfiyMyLife/Lineux-Hotswap/tree/main/Klipper)<br>[Video](https://www.youtube.com/watch?v=sOk1mblA44g) |
 | Groups | [Discord](https://discord.gg/Xwqbjj4VjH) EN 1.1K |

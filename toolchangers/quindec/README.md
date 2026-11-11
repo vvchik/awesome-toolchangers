@@ -25,3 +25,7 @@
 <tr><td align="center" width="33%"><a href="3-quindec.jpg"><img src="3-quindec.jpg" width="260" alt="Quindec picture 3"></a><br><sub>Photo: <a href="https://youtu.be/941lrKT-fIY">Srin</a></sub></td><td align="center" width="33%"><a href="4-quindec.jpg"><img src="4-quindec.jpg" width="260" alt="Quindec picture 4"></a><br><sub>Photo: <a href="https://youtu.be/-aM5X-14fe0">Srin</a></sub></td><td align="center" width="33%"><a href="5-quindec.jpg"><img src="5-quindec.jpg" width="260" alt="Quindec picture 5"></a><br><sub>Photo: <a href="https://youtu.be/941lrKT-fIY">Srin</a></sub></td></tr>
 <tr><td align="center" width="33%"><a href="6-quindec.jpg"><img src="6-quindec.jpg" width="260" alt="Quindec picture 6"></a><br><sub>Photo: <a href="https://youtu.be/Pdesunm21xI">Srin</a></sub></td><td align="center" width="33%"><a href="7-quindec.jpg"><img src="7-quindec.jpg" width="260" alt="Quindec picture 7"></a><br><sub>Photo: <a href="https://youtu.be/Pdesunm21xI">Srin</a></sub></td></tr>
 </table>
+
+## Builds by other people
+
+- [Quindec on a BBox](https://www.youtube.com/watch?v=cEPVIrOjvRU), *sakitume (Sakitume Makes)*. Beta files adapted to the author's BBox CoreXY, 2026-04.

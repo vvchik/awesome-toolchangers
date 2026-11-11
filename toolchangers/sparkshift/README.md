@@ -14,7 +14,7 @@
 | Status | CAD only, not built yet |
 | Coupling | Maxwell |
 | Lock | magnets |
-| Latest version | v26j<br>[2026-10](https://github.com/nisparks/SparkShift/commit/95bf9e3) |
+| Latest version | v26j<br>[2026-10](https://github.com/nisparks/SparkShift/commit/38aa617) |
 | Stars Likes Views | [![GitHub stars](https://img.shields.io/github/stars/nisparks/SparkShift?style=flat-square&label=&color=d0d7de&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2Y1YjMwMSIgZD0iTTEyIDJsMy4wOSA2LjI2TDIyIDkuMjdsLTUgNC44NyAxLjE4IDYuODhMMTIgMTcuNzdsLTYuMTggMy4yNUw3IDE0LjE0IDIgOS4yN2w2LjkxLTEuMDF6Ii8+PC9zdmc+)](https://github.com/nisparks/SparkShift) |
 | Links | [CAD](https://github.com/nisparks/SparkShift/tree/main/cad)<br>[STL](https://github.com/nisparks/SparkShift/tree/main/stl_v26)<br>[BOM](https://github.com/nisparks/SparkShift/blob/main/BOM.md) |
 

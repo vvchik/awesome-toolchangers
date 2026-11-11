@@ -23,3 +23,7 @@
 <table>
 <tr><td align="center" width="33%"><a href="0-cheapest-toolchanger.jpg"><img src="0-cheapest-toolchanger.jpg" width="260" alt="The Cheapest ToolChanger picture 0"></a><br><sub>Photo: <a href="https://www.printables.com/model/1294704-the-cheapest-toolchanger">iZboxo</a></sub></td><td align="center" width="33%"><a href="1-cheapest-toolchanger.jpg"><img src="1-cheapest-toolchanger.jpg" width="260" alt="The Cheapest ToolChanger picture 1"></a><br><sub>Photo: <a href="https://www.printables.com/model/1294704-the-cheapest-toolchanger">iZboxo</a></sub></td></tr>
 </table>
+
+## Notes
+
+- [ZdeHav Magnetic Toolchanger](../zdehav-changer/README.md) (2026-05) is a later design by the same author.

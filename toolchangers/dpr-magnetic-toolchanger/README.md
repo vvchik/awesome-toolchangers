@@ -30,4 +30,5 @@
 
 ## Notes
 
+- As of 2026-11, the only CAD download, an Autodesk 360 share linked from the guide, is dead, and the Wayback Machine has no copy. ([source](https://www.instructables.com/Magnetic-3D-Printed-Toolchnager/))
 - It mounts on a CoreXY printer with an MGN9H X rail facing up, and builders must design their own belt adapter. ([source](https://www.instructables.com/Magnetic-3D-Printed-Toolchnager/))
